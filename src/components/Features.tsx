@@ -1,5 +1,5 @@
 
-import { Users, Cloud-upload, Graduation-cap, Laptop, Book, Arrow-up } from 'lucide-react';
+import { Users, CloudUpload, GraduationCap, Laptop, Book, ArrowUp } from 'lucide-react';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 
 const Features = () => {
@@ -10,12 +10,12 @@ const Features = () => {
       description: 'Learn from industry professionals with years of experience in AWS, Azure, and GCP.',
     },
     {
-      icon: Cloud-upload,
+      icon: CloudUpload,
       title: 'Hands-on Projects',
       description: 'Work on real-world cloud projects and build a portfolio that stands out to employers.',
     },
     {
-      icon: Graduation-cap,
+      icon: GraduationCap,
       title: 'Certification Support',
       description: 'Get guidance and preparation for AWS, Azure, and GCP certification exams.',
     },
@@ -30,7 +30,7 @@ const Features = () => {
       description: 'Structured learning path covering cloud fundamentals to advanced AI integration.',
     },
     {
-      icon: Arrow-up,
+      icon: ArrowUp,
       title: 'Career Advancement',
       description: 'Job placement assistance and career guidance to help you land your dream role.',
     },

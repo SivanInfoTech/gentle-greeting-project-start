@@ -1,5 +1,5 @@
 
-import { Cloud, Mail, Phone, MapPin, Book-open, Users, Graduation-cap } from 'lucide-react';
+import { Cloud, Mail, Phone, MapPin, BookOpen, Users, GraduationCap } from 'lucide-react';
 
 const Footer = () => {
   return (
@@ -18,9 +18,9 @@ const Footer = () => {
                 Empowering freshers with comprehensive cloud and AI internship programs. Your gateway to a successful tech career.
               </p>
               <div className="flex space-x-4">
-                <Book-open className="h-5 w-5 text-gray-400 hover:text-blue-400 cursor-pointer transition-colors" />
+                <BookOpen className="h-5 w-5 text-gray-400 hover:text-blue-400 cursor-pointer transition-colors" />
                 <Users className="h-5 w-5 text-gray-400 hover:text-blue-400 cursor-pointer transition-colors" />
-                <Graduation-cap className="h-5 w-5 text-gray-400 hover:text-blue-400 cursor-pointer transition-colors" />
+                <GraduationCap className="h-5 w-5 text-gray-400 hover:text-blue-400 cursor-pointer transition-colors" />
                 <Cloud className="h-5 w-5 text-gray-400 hover:text-blue-400 cursor-pointer transition-colors" />
               </div>
             </div>

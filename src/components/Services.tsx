@@ -1,5 +1,5 @@
 
-import { Cloud, Graduation-cap, Users, Book-open } from 'lucide-react';
+import { Cloud, GraduationCap, Users, BookOpen } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 
@@ -13,7 +13,7 @@ const Services = () => {
       price: 'Starting at ₹15,000',
     },
     {
-      icon: Graduation-cap,
+      icon: GraduationCap,
       title: 'Bootcamp Courses',
       description: 'Intensive bootcamp programs designed to fast-track your cloud and AI skills with practical experience.',
       features: ['AI/ML Integration', 'DevOps Tools', 'Cloud Architecture', 'Industry Projects'],
@@ -27,7 +27,7 @@ const Services = () => {
       price: 'Starting at ₹35,000',
     },
     {
-      icon: Book-open,
+      icon: BookOpen,
       title: 'AI Specialization',
       description: 'Specialized training in Artificial Intelligence and Machine Learning integrated with cloud platforms.',
       features: ['ML on AWS/Azure', 'AI Model Deployment', 'Data Engineering', 'Cloud AI Services'],
