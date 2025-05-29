@@ -1,38 +1,38 @@
 
-import { Shield, Zap, Globe, Settings, Database, Lock } from 'lucide-react';
+import { Users, Cloud-upload, Graduation-cap, Laptop, Book, Arrow-up } from 'lucide-react';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 
 const Features = () => {
   const features = [
     {
-      icon: Shield,
-      title: 'Enterprise Security',
-      description: 'Bank-grade security with end-to-end encryption and compliance certifications.',
+      icon: Users,
+      title: 'Expert Mentorship',
+      description: 'Learn from industry professionals with years of experience in AWS, Azure, and GCP.',
     },
     {
-      icon: Zap,
-      title: 'Lightning Fast',
-      description: 'Global CDN and optimized infrastructure for blazing-fast performance worldwide.',
+      icon: Cloud-upload,
+      title: 'Hands-on Projects',
+      description: 'Work on real-world cloud projects and build a portfolio that stands out to employers.',
     },
     {
-      icon: Globe,
-      title: 'Global Scale',
-      description: 'Deploy across multiple regions with automatic scaling and load balancing.',
+      icon: Graduation-cap,
+      title: 'Certification Support',
+      description: 'Get guidance and preparation for AWS, Azure, and GCP certification exams.',
     },
     {
-      icon: Settings,
-      title: 'Easy Management',
-      description: 'Intuitive dashboard and APIs for seamless cloud resource management.',
+      icon: Laptop,
+      title: 'Live Virtual Labs',
+      description: 'Access to cloud environments and virtual labs for practical learning and experimentation.',
     },
     {
-      icon: Database,
-      title: 'Reliable Storage',
-      description: 'Redundant, secure storage with automatic backups and disaster recovery.',
+      icon: Book,
+      title: 'Comprehensive Curriculum',
+      description: 'Structured learning path covering cloud fundamentals to advanced AI integration.',
     },
     {
-      icon: Lock,
-      title: 'Privacy First',
-      description: 'Your data stays yours. GDPR compliant with transparent privacy policies.',
+      icon: Arrow-up,
+      title: 'Career Advancement',
+      description: 'Job placement assistance and career guidance to help you land your dream role.',
     },
   ];
 
@@ -46,7 +46,7 @@ const Features = () => {
               Why Choose SitCloud?
             </h2>
             <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-              Built for modern businesses that demand reliability, security, and performance at scale.
+              We provide comprehensive training programs designed to launch your career in cloud computing and AI.
             </p>
           </div>
 

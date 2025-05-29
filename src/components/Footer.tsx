@@ -1,5 +1,5 @@
 
-import { Cloud, Mail, Phone, MapPin, Facebook, Twitter, Linkedin, Github } from 'lucide-react';
+import { Cloud, Mail, Phone, MapPin, Book-open, Users, Graduation-cap } from 'lucide-react';
 
 const Footer = () => {
   return (
@@ -15,35 +15,35 @@ const Footer = () => {
                 <span className="text-2xl font-bold">SitCloud</span>
               </div>
               <p className="text-gray-400">
-                Empowering businesses with reliable, secure, and scalable cloud solutions.
+                Empowering freshers with comprehensive cloud and AI internship programs. Your gateway to a successful tech career.
               </p>
               <div className="flex space-x-4">
-                <Facebook className="h-5 w-5 text-gray-400 hover:text-blue-400 cursor-pointer transition-colors" />
-                <Twitter className="h-5 w-5 text-gray-400 hover:text-blue-400 cursor-pointer transition-colors" />
-                <Linkedin className="h-5 w-5 text-gray-400 hover:text-blue-400 cursor-pointer transition-colors" />
-                <Github className="h-5 w-5 text-gray-400 hover:text-blue-400 cursor-pointer transition-colors" />
+                <Book-open className="h-5 w-5 text-gray-400 hover:text-blue-400 cursor-pointer transition-colors" />
+                <Users className="h-5 w-5 text-gray-400 hover:text-blue-400 cursor-pointer transition-colors" />
+                <Graduation-cap className="h-5 w-5 text-gray-400 hover:text-blue-400 cursor-pointer transition-colors" />
+                <Cloud className="h-5 w-5 text-gray-400 hover:text-blue-400 cursor-pointer transition-colors" />
               </div>
             </div>
 
-            {/* Services */}
+            {/* Programs */}
             <div>
-              <h3 className="text-lg font-semibold mb-4">Services</h3>
+              <h3 className="text-lg font-semibold mb-4">Programs</h3>
               <ul className="space-y-2">
-                <li><a href="#" className="text-gray-400 hover:text-white transition-colors">Cloud Hosting</a></li>
-                <li><a href="#" className="text-gray-400 hover:text-white transition-colors">Cloud Storage</a></li>
-                <li><a href="#" className="text-gray-400 hover:text-white transition-colors">Development Tools</a></li>
-                <li><a href="#" className="text-gray-400 hover:text-white transition-colors">Premium Support</a></li>
+                <li><a href="#" className="text-gray-400 hover:text-white transition-colors">90-Day Cloud Internship</a></li>
+                <li><a href="#" className="text-gray-400 hover:text-white transition-colors">Bootcamp Courses</a></li>
+                <li><a href="#" className="text-gray-400 hover:text-white transition-colors">Junior Engineer Program</a></li>
+                <li><a href="#" className="text-gray-400 hover:text-white transition-colors">AI Specialization</a></li>
               </ul>
             </div>
 
-            {/* Company */}
+            {/* Cloud Platforms */}
             <div>
-              <h3 className="text-lg font-semibold mb-4">Company</h3>
+              <h3 className="text-lg font-semibold mb-4">Cloud Platforms</h3>
               <ul className="space-y-2">
-                <li><a href="#" className="text-gray-400 hover:text-white transition-colors">About Us</a></li>
-                <li><a href="#" className="text-gray-400 hover:text-white transition-colors">Careers</a></li>
-                <li><a href="#" className="text-gray-400 hover:text-white transition-colors">Blog</a></li>
-                <li><a href="#" className="text-gray-400 hover:text-white transition-colors">Contact</a></li>
+                <li><a href="#" className="text-gray-400 hover:text-white transition-colors">AWS Training</a></li>
+                <li><a href="#" className="text-gray-400 hover:text-white transition-colors">Azure Certification</a></li>
+                <li><a href="#" className="text-gray-400 hover:text-white transition-colors">GCP Fundamentals</a></li>
+                <li><a href="#" className="text-gray-400 hover:text-white transition-colors">Multi-Cloud Skills</a></li>
               </ul>
             </div>
 
@@ -71,12 +71,12 @@ const Footer = () => {
           <div className="py-6 border-t border-gray-800">
             <div className="flex flex-col md:flex-row justify-between items-center">
               <p className="text-gray-400 text-sm">
-                © 2024 SitCloud. All rights reserved.
+                © 2024 SitCloud. All rights reserved. Empowering the next generation of cloud professionals.
               </p>
               <div className="flex space-x-6 mt-4 md:mt-0">
                 <a href="#" className="text-gray-400 hover:text-white text-sm transition-colors">Privacy Policy</a>
                 <a href="#" className="text-gray-400 hover:text-white text-sm transition-colors">Terms of Service</a>
-                <a href="#" className="text-gray-400 hover:text-white text-sm transition-colors">Cookie Policy</a>
+                <a href="#" className="text-gray-400 hover:text-white text-sm transition-colors">Admission Policy</a>
               </div>
             </div>
           </div>

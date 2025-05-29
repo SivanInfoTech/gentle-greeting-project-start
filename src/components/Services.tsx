@@ -1,37 +1,37 @@
 
-import { Server, Cloud, Code, Headphones } from 'lucide-react';
+import { Cloud, Graduation-cap, Users, Book-open } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 
 const Services = () => {
   const services = [
     {
-      icon: Server,
-      title: 'Cloud Hosting',
-      description: 'High-performance hosting with SSD storage, unlimited bandwidth, and 99.9% uptime guarantee.',
-      features: ['SSD Storage', 'Free SSL', 'Daily Backups', 'CDN Included'],
-      price: 'Starting at $9.99/mo',
-    },
-    {
       icon: Cloud,
-      title: 'Cloud Storage',
-      description: 'Secure, scalable storage solutions with automatic sync and file versioning.',
-      features: ['Unlimited Storage', 'File Sync', 'Version Control', 'Team Sharing'],
-      price: 'Starting at $4.99/mo',
+      title: '90-Day Cloud Internship',
+      description: 'Comprehensive hands-on training in AWS, Azure, and GCP with real-world projects and industry mentorship.',
+      features: ['AWS Certification Prep', 'Azure Fundamentals', 'GCP Essentials', 'Live Projects'],
+      price: 'Starting at ₹15,000',
     },
     {
-      icon: Code,
-      title: 'Development Tools',
-      description: 'Complete development environment with CI/CD, staging, and deployment tools.',
-      features: ['Git Integration', 'Auto Deploy', 'Staging Environment', 'API Access'],
-      price: 'Starting at $19.99/mo',
+      icon: Graduation-cap,
+      title: 'Bootcamp Courses',
+      description: 'Intensive bootcamp programs designed to fast-track your cloud and AI skills with practical experience.',
+      features: ['AI/ML Integration', 'DevOps Tools', 'Cloud Architecture', 'Industry Projects'],
+      price: 'Starting at ₹25,000',
     },
     {
-      icon: Headphones,
-      title: 'Premium Support',
-      description: '24/7 expert support with priority response times and dedicated account management.',
-      features: ['24/7 Support', 'Priority Queue', 'Phone Support', 'Account Manager'],
-      price: 'Starting at $49.99/mo',
+      icon: Users,
+      title: 'Junior Engineer Program',
+      description: 'Advanced internship program for aspiring cloud engineers with placement assistance and career guidance.',
+      features: ['Advanced Cloud Skills', 'Team Collaboration', 'Client Projects', 'Job Placement'],
+      price: 'Starting at ₹35,000',
+    },
+    {
+      icon: Book-open,
+      title: 'AI Specialization',
+      description: 'Specialized training in Artificial Intelligence and Machine Learning integrated with cloud platforms.',
+      features: ['ML on AWS/Azure', 'AI Model Deployment', 'Data Engineering', 'Cloud AI Services'],
+      price: 'Starting at ₹20,000',
     },
   ];
 
@@ -42,10 +42,10 @@ const Services = () => {
           {/* Section Header */}
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-              Our Services
+              Our Training Programs
             </h2>
             <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-              Comprehensive cloud solutions tailored to meet your business needs at every stage of growth.
+              Choose from our comprehensive cloud and AI training programs designed for freshers and career changers.
             </p>
           </div>
 
@@ -77,7 +77,7 @@ const Services = () => {
                     {service.price}
                   </div>
                   <Button className="w-full bg-blue-600 hover:bg-blue-700 text-white">
-                    Get Started
+                    Learn More
                   </Button>
                 </CardContent>
               </Card>
