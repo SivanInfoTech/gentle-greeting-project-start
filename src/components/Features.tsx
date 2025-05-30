@@ -1,91 +1,109 @@
 
-import { Users, CloudUpload, GraduationCap, Laptop, BookOpen, ArrowUp, Star, Target, Award, Zap, CheckCircle } from 'lucide-react';
+import { Users, CloudUpload, GraduationCap, Laptop, BookOpen, Building, Star, Target, Award, Zap, CheckCircle, Clock, Trophy, Briefcase } from 'lucide-react';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 
 const Features = () => {
-  const features = [
+  const trainingFeatures = [
     {
       icon: Users,
-      title: 'Industry Expert Mentors',
-      description: 'Learn from senior engineers at Google, Amazon, Microsoft with 10+ years of real-world cloud experience.',
-      stats: '50+ Mentors'
-    },
-    {
-      icon: CloudUpload,
-      title: 'Real-World Projects',
-      description: 'Build production-grade applications on AWS, Azure, GCP. Create a portfolio that stands out.',
-      stats: '20+ Projects'
-    },
-    {
-      icon: GraduationCap,
-      title: 'Multi-Cloud Certifications',
-      description: 'Get certified in AWS Solutions Architect, Azure Fundamentals, and GCP Cloud Engineer.',
-      stats: '5+ Certifications'
+      title: 'Expert Faculty',
+      description: 'Learn from industry veterans with 10+ years of experience at top companies like Amazon, Microsoft, Google.',
+      highlight: '50+ Expert Trainers'
     },
     {
       icon: Laptop,
-      title: 'Live Virtual Labs',
-      description: 'Access to premium cloud environments 24/7. Practice on real infrastructure without cost.',
-      stats: '24/7 Access'
+      title: 'Hands-On Training',
+      description: 'Real-world projects and live labs on actual cloud environments. Build your portfolio while learning.',
+      highlight: '24/7 Lab Access'
+    },
+    {
+      icon: Award,
+      title: 'Industry Certifications',
+      description: 'Get certified in AWS, Azure, GCP with our comprehensive exam preparation and guaranteed pass rates.',
+      highlight: '95% Pass Rate'
+    },
+    {
+      icon: Briefcase,
+      title: '100% Placement Support',
+      description: 'Dedicated placement team, interview preparation, and direct tie-ups with 500+ companies.',
+      highlight: '98% Placement Success'
+    },
+    {
+      icon: Clock,
+      title: 'Flexible Batches',
+      description: 'Weekday, weekend, and online batches available. Choose timings that fit your schedule.',
+      highlight: 'Multiple Time Slots'
     },
     {
       icon: BookOpen,
-      title: 'AI-Integrated Curriculum',
-      description: 'Master AI/ML integration with cloud platforms. Learn ChatGPT, TensorFlow, and ML deployment.',
-      stats: '100+ AI Topics'
-    },
-    {
-      icon: ArrowUp,
-      title: 'Job Placement',
-      description: 'Not just training, but guaranteed placement. 98% of students land jobs within 30 days.',
-      stats: '98% Success'
-    },
+      title: 'Updated Curriculum',
+      description: 'Latest industry trends, AI/ML integration, and emerging cloud technologies included in training.',
+      highlight: 'Industry Aligned'
+    }
+  ];
+
+  const whyChooseUs = [
+    { icon: Building, title: '15+ Years', desc: 'Training Experience' },
+    { icon: Users, title: '2000+', desc: 'Students Placed' },
+    { icon: Trophy, title: '#1 Rated', desc: 'Training Institute' },
+    { icon: Star, title: '4.9/5', desc: 'Student Rating' }
+  ];
+
+  const placementPartners = [
+    'TCS', 'Infosys', 'Wipro', 'Accenture', 'IBM', 'Amazon', 'Microsoft', 'Google', 'Cognizant', 'HCL', 'Capgemini', 'Deloitte'
   ];
 
   return (
-    <section id="features" className="py-20 bg-white">
+    <section id="features" className="py-16 bg-white">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="max-w-7xl mx-auto">
           {/* Section Header */}
           <div className="text-center mb-16">
-            <div className="inline-flex items-center px-4 py-2 bg-purple-50 text-purple-700 rounded-full text-sm font-medium mb-6 border border-purple-200">
+            <div className="inline-flex items-center px-4 py-2 bg-orange-100 text-orange-800 rounded-full text-sm font-semibold mb-6">
               <Star className="mr-2 h-4 w-4" />
-              Why Students Choose SitCloud
+              Why 2000+ Students Choose SitCloud
             </div>
-            <h2 className="text-4xl md:text-5xl font-bold text-slate-900 mb-6">
-              The SitCloud Advantage
+            <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
+              Best-in-Class Cloud Training
             </h2>
-            <p className="text-xl text-slate-600 max-w-3xl mx-auto">
-              We don't just train, we transform. Our unique approach has helped 2000+ freshers land dream jobs.
+            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+              Experience world-class training methodology with industry experts, hands-on projects, and guaranteed career success.
             </p>
           </div>
 
-          {/* Features Grid */}
+          {/* Why Choose Us Stats */}
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mb-16">
+            {whyChooseUs.map((stat, index) => (
+              <div key={index} className="bg-gradient-to-br from-blue-50 to-purple-50 p-6 rounded-xl text-center hover:shadow-lg transition-all duration-300">
+                <stat.icon className="h-8 w-8 text-blue-600 mx-auto mb-3" />
+                <div className="text-2xl font-bold text-gray-900 mb-1">{stat.title}</div>
+                <div className="text-gray-600 text-sm">{stat.desc}</div>
+              </div>
+            ))}
+          </div>
+
+          {/* Training Features Grid */}
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
-            {features.map((feature, index) => (
-              <Card key={index} className="bg-white hover:shadow-lg transition-all duration-300 border border-slate-200 group">
+            {trainingFeatures.map((feature, index) => (
+              <Card key={index} className="bg-white hover:shadow-lg transition-all duration-300 border border-gray-200 group h-full">
                 <CardHeader className="pb-4">
-                  <div className="w-12 h-12 rounded-lg bg-blue-50 flex items-center justify-center mb-4 group-hover:bg-blue-100 transition-colors">
-                    <feature.icon className="h-6 w-6 text-blue-600" />
+                  <div className="w-16 h-16 rounded-xl bg-gradient-to-br from-blue-500 to-purple-600 flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300">
+                    <feature.icon className="h-8 w-8 text-white" />
                   </div>
-                  <CardTitle className="text-xl font-bold text-slate-900 mb-2">
+                  <CardTitle className="text-xl font-bold text-gray-900 mb-2">
                     {feature.title}
                   </CardTitle>
                 </CardHeader>
                 
-                <CardContent>
-                  <CardDescription className="text-slate-600 text-base leading-relaxed mb-4">
+                <CardContent className="flex-1 flex flex-col">
+                  <CardDescription className="text-gray-600 text-base leading-relaxed mb-4 flex-1">
                     {feature.description}
                   </CardDescription>
                   
-                  <div className="flex items-center justify-between pt-4 border-t border-slate-100">
+                  <div className="mt-auto pt-4 border-t border-gray-100">
                     <div className="flex items-center space-x-2">
                       <Target className="h-4 w-4 text-green-600" />
-                      <span className="text-sm font-medium text-green-600">{feature.stats}</span>
-                    </div>
-                    <div className="flex items-center space-x-1">
-                      <Star className="h-4 w-4 text-yellow-500 fill-current" />
-                      <span className="text-sm text-slate-500">4.9/5</span>
+                      <span className="text-sm font-semibold text-green-600">{feature.highlight}</span>
                     </div>
                   </div>
                 </CardContent>
@@ -93,37 +111,57 @@ const Features = () => {
             ))}
           </div>
 
-          {/* Stats Section */}
-          <div className="bg-slate-900 rounded-2xl p-8 text-white">
+          {/* Placement Partners */}
+          <div className="bg-gray-50 rounded-2xl p-8 mb-16">
+            <div className="text-center mb-8">
+              <h3 className="text-2xl md:text-3xl font-bold text-gray-900 mb-4">
+                Our Placement Partners
+              </h3>
+              <p className="text-gray-600 text-lg">
+                Direct recruitment opportunities with top companies
+              </p>
+            </div>
+            
+            <div className="grid grid-cols-3 md:grid-cols-6 gap-4">
+              {placementPartners.map((company, index) => (
+                <div key={index} className="bg-white p-4 rounded-lg text-center shadow-sm hover:shadow-md transition-shadow">
+                  <span className="text-gray-700 font-semibold text-sm">{company}</span>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          {/* Success Metrics */}
+          <div className="bg-gradient-to-r from-green-600 to-blue-600 rounded-2xl p-8 text-white">
             <div className="text-center mb-8">
               <h3 className="text-3xl font-bold mb-4">
-                Proven Results
+                Proven Track Record of Success
               </h3>
-              <p className="text-slate-300 text-lg">
-                Real results from real students. Join the success revolution.
+              <p className="text-green-100 text-lg">
+                Real results that speak for our training quality
               </p>
             </div>
             
             <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
               <div className="text-center">
-                <Award className="h-10 w-10 text-blue-400 mx-auto mb-3" />
-                <div className="text-3xl font-bold text-white mb-2">98%</div>
-                <div className="text-slate-400">Placement Success</div>
+                <Award className="h-12 w-12 text-yellow-300 mx-auto mb-3" />
+                <div className="text-4xl font-bold text-white mb-2">98%</div>
+                <div className="text-green-200">Placement Success Rate</div>
               </div>
               <div className="text-center">
-                <Users className="h-10 w-10 text-green-400 mx-auto mb-3" />
-                <div className="text-3xl font-bold text-white mb-2">2000+</div>
-                <div className="text-slate-400">Happy Students</div>
+                <Users className="h-12 w-12 text-blue-300 mx-auto mb-3" />
+                <div className="text-4xl font-bold text-white mb-2">2000+</div>
+                <div className="text-green-200">Students Trained</div>
               </div>
               <div className="text-center">
-                <Zap className="h-10 w-10 text-purple-400 mx-auto mb-3" />
-                <div className="text-3xl font-bold text-white mb-2">₹8.5L</div>
-                <div className="text-slate-400">Average Package</div>
+                <Zap className="h-12 w-12 text-purple-300 mx-auto mb-3" />
+                <div className="text-4xl font-bold text-white mb-2">₹8.5L</div>
+                <div className="text-green-200">Average Package</div>
               </div>
               <div className="text-center">
-                <Star className="h-10 w-10 text-yellow-400 mx-auto mb-3 fill-current" />
-                <div className="text-3xl font-bold text-white mb-2">4.9/5</div>
-                <div className="text-slate-400">Student Rating</div>
+                <Star className="h-12 w-12 text-yellow-300 mx-auto mb-3 fill-current" />
+                <div className="text-4xl font-bold text-white mb-2">4.9/5</div>
+                <div className="text-green-200">Student Satisfaction</div>
               </div>
             </div>
           </div>

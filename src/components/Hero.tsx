@@ -1,83 +1,129 @@
 
-import { ArrowRight, Play, Star, TrendingUp, Users, Award, CheckCircle } from 'lucide-react';
+import { ArrowRight, Play, Star, Users, Award, CheckCircle, Clock, MapPin, Phone } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 
 const Hero = () => {
   return (
-    <section id="home" className="pt-20 pb-16 bg-gradient-to-b from-slate-50 to-white relative overflow-hidden">
-      {/* Subtle Background Elements */}
-      <div className="absolute top-20 left-10 w-32 h-32 bg-blue-100 rounded-full opacity-10 blur-xl"></div>
-      <div className="absolute bottom-20 right-20 w-24 h-24 bg-purple-100 rounded-full opacity-10 blur-xl"></div>
+    <section id="home" className="pt-20 pb-16 bg-gradient-to-br from-blue-900 via-blue-800 to-purple-900 relative overflow-hidden">
+      {/* Background Pattern */}
+      <div className="absolute inset-0 opacity-10">
+        <div className="absolute top-20 left-10 w-72 h-72 bg-white rounded-full blur-3xl"></div>
+        <div className="absolute bottom-20 right-20 w-96 h-96 bg-purple-300 rounded-full blur-3xl"></div>
+        <div className="absolute top-1/2 left-1/2 w-64 h-64 bg-blue-300 rounded-full blur-2xl transform -translate-x-1/2 -translate-y-1/2"></div>
+      </div>
       
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="max-w-7xl mx-auto">
-          <div className="text-center">
-            {/* Trust Badge */}
-            <div className="inline-flex items-center px-4 py-2 bg-green-50 text-green-700 rounded-full text-sm font-medium mb-8 border border-green-200">
-              <TrendingUp className="mr-2 h-4 w-4" />
-              98% Placement Rate • 2000+ Success Stories
-              <Star className="ml-2 h-4 w-4 text-green-600 fill-current" />
+          <div className="grid lg:grid-cols-2 gap-12 items-center">
+            {/* Left Content */}
+            <div className="text-white">
+              {/* Badge */}
+              <div className="inline-flex items-center px-4 py-2 bg-green-500 text-white rounded-full text-sm font-semibold mb-6 shadow-lg">
+                <Star className="mr-2 h-4 w-4 fill-current" />
+                #1 Cloud Training Institute in Bangalore
+              </div>
+
+              {/* Main Heading */}
+              <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight">
+                Best Cloud Computing
+                <br />
+                <span className="text-yellow-400">Training in Bangalore</span>
+              </h1>
+
+              {/* Subtitle */}
+              <p className="text-xl text-blue-100 font-medium leading-relaxed mb-8">
+                Get industry-ready with hands-on training in <span className="text-yellow-400 font-bold">AWS, Azure & GCP</span>. 
+                Join 2000+ successful cloud professionals with 100% placement guarantee.
+              </p>
+
+              {/* Key Points */}
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-8">
+                <div className="flex items-center space-x-3">
+                  <CheckCircle className="h-5 w-5 text-green-400 flex-shrink-0" />
+                  <span className="text-blue-100">100% Placement Assistance</span>
+                </div>
+                <div className="flex items-center space-x-3">
+                  <CheckCircle className="h-5 w-5 text-green-400 flex-shrink-0" />
+                  <span className="text-blue-100">Industry Expert Trainers</span>
+                </div>
+                <div className="flex items-center space-x-3">
+                  <CheckCircle className="h-5 w-5 text-green-400 flex-shrink-0" />
+                  <span className="text-blue-100">Live Project Training</span>
+                </div>
+                <div className="flex items-center space-x-3">
+                  <CheckCircle className="h-5 w-5 text-green-400 flex-shrink-0" />
+                  <span className="text-blue-100">Flexible Batch Timings</span>
+                </div>
+              </div>
+
+              {/* CTA Buttons */}
+              <div className="flex flex-col sm:flex-row gap-4 mb-8">
+                <Button size="lg" className="bg-orange-500 hover:bg-orange-600 text-white px-8 py-4 text-lg font-semibold rounded-lg shadow-xl hover:shadow-2xl transition-all duration-300">
+                  <Phone className="mr-2 h-5 w-5" />
+                  Call Now: +91 9876543210
+                </Button>
+                <Button variant="outline" size="lg" className="border-2 border-white text-white hover:bg-white hover:text-blue-900 px-8 py-4 text-lg font-semibold rounded-lg">
+                  <Play className="mr-2 h-5 w-5" />
+                  Free Demo Class
+                </Button>
+              </div>
+
+              {/* Contact Info */}
+              <div className="flex items-center space-x-4 text-blue-100">
+                <MapPin className="h-5 w-5 text-yellow-400" />
+                <span>Rajajinagar, Bangalore | Online & Offline Classes Available</span>
+              </div>
             </div>
 
-            {/* Clean Hero Title */}
-            <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold mb-6 leading-tight text-slate-900">
-              Master Cloud Engineering
-              <br />
-              <span className="text-blue-600">in 90 Days</span>
-            </h1>
-
-            {/* Subtitle */}
-            <p className="text-xl md:text-2xl text-slate-600 font-medium leading-relaxed mb-12 max-w-4xl mx-auto">
-              From fresher to certified cloud professional with comprehensive training in 
-              <span className="text-blue-600 font-semibold"> AWS, Azure & GCP</span>
-            </p>
-
-            {/* Key Benefits */}
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12 max-w-4xl mx-auto">
-              <div className="flex items-center justify-center space-x-3 p-4 bg-white rounded-lg shadow-sm border border-slate-200">
-                <Award className="h-6 w-6 text-blue-600" />
-                <span className="text-slate-700 font-medium">Industry Certified</span>
+            {/* Right Content - Stats Card */}
+            <div className="bg-white rounded-2xl p-8 shadow-2xl">
+              <div className="text-center mb-6">
+                <h3 className="text-2xl font-bold text-gray-900 mb-2">Why Choose SitCloud?</h3>
+                <p className="text-gray-600">Join India's leading cloud training institute</p>
               </div>
-              <div className="flex items-center justify-center space-x-3 p-4 bg-white rounded-lg shadow-sm border border-slate-200">
-                <Users className="h-6 w-6 text-green-600" />
-                <span className="text-slate-700 font-medium">Job Guarantee</span>
+              
+              <div className="grid grid-cols-2 gap-6 mb-6">
+                <div className="text-center p-4 bg-blue-50 rounded-lg">
+                  <div className="text-3xl font-bold text-blue-600 mb-1">2000+</div>
+                  <div className="text-gray-600 text-sm">Students Placed</div>
+                </div>
+                <div className="text-center p-4 bg-green-50 rounded-lg">
+                  <div className="text-3xl font-bold text-green-600 mb-1">98%</div>
+                  <div className="text-gray-600 text-sm">Success Rate</div>
+                </div>
+                <div className="text-center p-4 bg-purple-50 rounded-lg">
+                  <div className="text-3xl font-bold text-purple-600 mb-1">₹8.5L</div>
+                  <div className="text-gray-600 text-sm">Avg. Package</div>
+                </div>
+                <div className="text-center p-4 bg-orange-50 rounded-lg">
+                  <div className="text-3xl font-bold text-orange-600 mb-1">15+</div>
+                  <div className="text-gray-600 text-sm">Years Experience</div>
+                </div>
               </div>
-              <div className="flex items-center justify-center space-x-3 p-4 bg-white rounded-lg shadow-sm border border-slate-200">
-                <TrendingUp className="h-6 w-6 text-purple-600" />
-                <span className="text-slate-700 font-medium">₹8L+ Package</span>
-              </div>
-            </div>
 
-            {/* CTA Buttons */}
-            <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-16">
-              <Button size="lg" className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-4 text-lg rounded-lg shadow-lg hover:shadow-xl transition-all duration-300">
-                Start Your Journey
-                <ArrowRight className="ml-2 h-5 w-5" />
-              </Button>
-              <Button variant="outline" size="lg" className="px-8 py-4 text-lg rounded-lg border-slate-300 text-slate-700 hover:bg-slate-50">
-                <Play className="mr-2 h-5 w-5" />
-                Watch Demo
-              </Button>
-            </div>
-
-            {/* Stats Section */}
-            <div className="bg-white rounded-2xl p-8 shadow-lg border border-slate-200 max-w-4xl mx-auto">
-              <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
-                <div className="text-center">
-                  <div className="text-3xl font-bold text-slate-900 mb-1">2000+</div>
-                  <div className="text-slate-600 text-sm">Students Placed</div>
-                </div>
-                <div className="text-center">
-                  <div className="text-3xl font-bold text-slate-900 mb-1">98%</div>
-                  <div className="text-slate-600 text-sm">Success Rate</div>
-                </div>
-                <div className="text-center">
-                  <div className="text-3xl font-bold text-slate-900 mb-1">₹8.5L</div>
-                  <div className="text-slate-600 text-sm">Avg. Package</div>
-                </div>
-                <div className="text-center">
-                  <div className="text-3xl font-bold text-slate-900 mb-1">500+</div>
-                  <div className="text-slate-600 text-sm">Companies</div>
+              {/* Form */}
+              <div className="bg-gray-50 rounded-lg p-6">
+                <h4 className="text-lg font-semibold text-gray-900 mb-4 text-center">Get Free Career Counseling</h4>
+                <div className="space-y-3">
+                  <input 
+                    type="text" 
+                    placeholder="Full Name" 
+                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                  />
+                  <input 
+                    type="tel" 
+                    placeholder="Phone Number" 
+                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                  />
+                  <input 
+                    type="email" 
+                    placeholder="Email Address" 
+                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                  />
+                  <Button className="w-full bg-blue-600 hover:bg-blue-700 text-white py-3 text-lg font-semibold">
+                    Get Free Demo Class
+                    <ArrowRight className="ml-2 h-5 w-5" />
+                  </Button>
                 </div>
               </div>
             </div>
