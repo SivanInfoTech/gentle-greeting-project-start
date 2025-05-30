@@ -1,15 +1,16 @@
 
 import Header from '@/components/Header';
 import Hero from '@/components/Hero';
-import Services from '@/components/Services';
-import Features from '@/components/Features';
-import Testimonials from '@/components/Testimonials';
-import Companies from '@/components/Companies';
+import WhySitCloud from '@/components/WhySitCloud';
+import CertificationTracks from '@/components/CertificationTracks';
+import TrainingCenters from '@/components/TrainingCenters';
+import SuccessStories from '@/components/SuccessStories';
+import BatchSchedule from '@/components/BatchSchedule';
+import PlacementPartners from '@/components/PlacementPartners';
 import Blog from '@/components/Blog';
-import LocationPages from '@/components/LocationPages';
-import EnquiryForm from '@/components/EnquiryForm';
 import Footer from '@/components/Footer';
 import SEOHead from '@/components/SEOHead';
+import FloatingCTA from '@/components/FloatingCTA';
 
 const Index = () => {
   const structuredData = {
@@ -21,6 +22,14 @@ const Index = () => {
     "address": [
       {
         "@type": "PostalAddress",
+        "streetAddress": "456 Tech Avenue, T. Nagar",
+        "addressLocality": "Chennai",
+        "addressRegion": "Tamil Nadu", 
+        "postalCode": "600017",
+        "addressCountry": "IN"
+      },
+      {
+        "@type": "PostalAddress",
         "streetAddress": "123 Cloud Street, Koramangala",
         "addressLocality": "Bangalore",
         "addressRegion": "Karnataka",
@@ -29,10 +38,10 @@ const Index = () => {
       },
       {
         "@type": "PostalAddress",
-        "streetAddress": "456 Tech Avenue, T. Nagar",
-        "addressLocality": "Chennai",
-        "addressRegion": "Tamil Nadu", 
-        "postalCode": "600017",
+        "streetAddress": "456 Tech Avenue, Rajajinagar",
+        "addressLocality": "Bangalore",
+        "addressRegion": "Karnataka",
+        "postalCode": "560010",
         "addressCountry": "IN"
       }
     ],
@@ -69,24 +78,25 @@ const Index = () => {
   };
 
   return (
-    <div className="min-h-screen">
+    <div className="min-h-screen bg-gray-50">
       <SEOHead
-        title="SitCloud - Premier Cloud Computing Training Institute in Chennai & Bangalore | AWS, Azure, GCP Certifications"
-        description="Master cloud computing with SitCloud's expert-led certification bootcamps in Chennai and Bangalore. Get certified in AWS, Azure, GCP with 100% placement assistance. Join 2000+ successful students."
+        title="SitCloud - #1 Cloud Computing Training Institute in Chennai & Bangalore | AWS, Azure, GCP Certifications"
+        description="Best Cloud Computing Certification Bootcamp with 100% Placement Support. Master AWS, Azure, GCP with expert training in Chennai and Bangalore. Join 2000+ successful students."
         keywords="cloud computing training chennai bangalore, AWS certification course, Azure training bootcamp, GCP certification program, DevOps training chennai bangalore, cloud architect course india"
         canonical="https://sitcloud.in"
         structuredData={structuredData}
       />
       <Header />
       <Hero />
-      <Services />
-      <Features />
-      <Testimonials />
-      <Companies />
+      <WhySitCloud />
+      <CertificationTracks />
+      <TrainingCenters />
+      <SuccessStories />
+      <BatchSchedule />
+      <PlacementPartners />
       <Blog />
-      <LocationPages />
-      <EnquiryForm />
       <Footer />
+      <FloatingCTA />
     </div>
   );
 };

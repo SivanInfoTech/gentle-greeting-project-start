@@ -1,5 +1,5 @@
 
-import { ArrowRight, Play, Star, Users, Award, CheckCircle, Clock, MapPin, Phone } from 'lucide-react';
+import { ArrowRight, Play, Star, Users, Award, CheckCircle, Clock, MapPin, Phone, MessageCircle } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 
 const Hero = () => {
@@ -29,13 +29,13 @@ const Hero = () => {
                 <br />
                 <span className="text-yellow-400">Certification Bootcamp</span>
                 <br />
-                <span className="text-3xl md:text-4xl lg:text-5xl text-blue-200">in Chennai & Bangalore</span>
+                <span className="text-2xl md:text-3xl lg:text-4xl text-blue-200">with 100% Placement Support</span>
               </h1>
 
               {/* Subtitle */}
               <p className="text-xl text-blue-100 font-medium leading-relaxed mb-8">
-                Get industry-ready with comprehensive certification training in <span className="text-yellow-400 font-bold">AWS, Azure & GCP</span>. 
-                Join 2000+ successful cloud professionals with 100% placement guarantee.
+                Master <span className="text-yellow-400 font-bold">AWS, Azure & GCP</span> with industry experts. 
+                Join 2000+ successful cloud professionals with guaranteed career transformation.
               </p>
 
               {/* Key Points */}
@@ -46,7 +46,7 @@ const Hero = () => {
                 </div>
                 <div className="flex items-center space-x-3">
                   <CheckCircle className="h-5 w-5 text-green-400 flex-shrink-0" />
-                  <span className="text-blue-100">100% Placement Assistance</span>
+                  <span className="text-blue-100">100% Placement Support</span>
                 </div>
                 <div className="flex items-center space-x-3">
                   <CheckCircle className="h-5 w-5 text-green-400 flex-shrink-0" />
@@ -61,20 +61,24 @@ const Hero = () => {
               {/* CTA Buttons */}
               <div className="flex flex-col sm:flex-row gap-4 mb-8">
                 <Button size="lg" className="bg-orange-500 hover:bg-orange-600 text-white px-8 py-4 text-lg font-semibold rounded-lg shadow-xl hover:shadow-2xl transition-all duration-300">
-                  <Phone className="mr-2 h-5 w-5" />
-                  Call Now: +91 9876543210
-                </Button>
-                <Button variant="outline" size="lg" className="border-2 border-white text-white hover:bg-white hover:text-blue-900 px-8 py-4 text-lg font-semibold rounded-lg">
                   <Play className="mr-2 h-5 w-5" />
-                  Free Demo Class
+                  Get Free Demo
+                </Button>
+                <Button size="lg" className="bg-green-600 hover:bg-green-700 text-white px-8 py-4 text-lg font-semibold rounded-lg shadow-xl hover:shadow-2xl transition-all duration-300">
+                  <MessageCircle className="mr-2 h-5 w-5" />
+                  Talk to a Counselor
                 </Button>
               </div>
 
               {/* Contact Info */}
               <div className="space-y-2 text-blue-100">
                 <div className="flex items-center space-x-4">
+                  <Phone className="h-5 w-5 text-yellow-400" />
+                  <span>Call: +91 9876543210</span>
+                </div>
+                <div className="flex items-center space-x-4">
                   <MapPin className="h-5 w-5 text-yellow-400" />
-                  <span>Chennai: T. Nagar | Bangalore: Rajajinagar</span>
+                  <span>Chennai: T. Nagar | Bangalore: Rajajinagar & Koramangala</span>
                 </div>
                 <div className="flex items-center space-x-4">
                   <Clock className="h-5 w-5 text-yellow-400" />
@@ -93,15 +97,15 @@ const Hero = () => {
               <div className="grid grid-cols-2 gap-6 mb-6">
                 <div className="text-center p-4 bg-blue-50 rounded-lg">
                   <div className="text-3xl font-bold text-blue-600 mb-1">2000+</div>
-                  <div className="text-gray-600 text-sm">Students Certified</div>
+                  <div className="text-gray-600 text-sm">Students Placed</div>
                 </div>
                 <div className="text-center p-4 bg-green-50 rounded-lg">
-                  <div className="text-3xl font-bold text-green-600 mb-1">98%</div>
-                  <div className="text-gray-600 text-sm">Pass Rate</div>
+                  <div className="text-3xl font-bold text-green-600 mb-1">₹8.5L</div>
+                  <div className="text-gray-600 text-sm">Avg. Package</div>
                 </div>
                 <div className="text-center p-4 bg-purple-50 rounded-lg">
-                  <div className="text-3xl font-bold text-purple-600 mb-1">₹8.5L</div>
-                  <div className="text-gray-600 text-sm">Avg. Package</div>
+                  <div className="text-3xl font-bold text-purple-600 mb-1">98%</div>
+                  <div className="text-gray-600 text-sm">Pass Rate</div>
                 </div>
                 <div className="text-center p-4 bg-orange-50 rounded-lg">
                   <div className="text-3xl font-bold text-orange-600 mb-1">3</div>

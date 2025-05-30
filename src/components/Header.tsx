@@ -15,9 +15,9 @@ const Header = () => {
   const navItems = [
     { name: 'Home', href: '/' },
     { name: 'Courses', href: '/courses' },
-    { name: 'Features', href: '#features' },
+    { name: 'Why SitCloud', href: '#why-sitcloud' },
+    { name: 'Batch Schedule', href: '#batch-schedule' },
     { name: 'Verify Certificate', href: '/verify' },
-    { name: 'About', href: '#about' },
     { name: 'Contact', href: '#contact' },
   ];
 
@@ -56,12 +56,12 @@ const Header = () => {
           </Link>
 
           {/* Desktop Navigation */}
-          <nav className="hidden md:flex items-center space-x-8">
+          <nav className="hidden md:flex items-center space-x-6">
             {navItems.map((item) => (
               <Link
                 key={item.name}
                 to={item.href}
-                className="text-slate-600 hover:text-blue-600 transition-colors duration-200 font-medium"
+                className="text-slate-700 hover:text-blue-600 transition-colors duration-200 font-medium text-sm"
               >
                 {item.name}
               </Link>
@@ -90,14 +90,12 @@ const Header = () => {
               <>
                 <Link to="/login">
                   <Button variant="outline" className="border-slate-300 text-slate-700 hover:bg-slate-50">
-                    Sign In
+                    Login
                   </Button>
                 </Link>
-                <Link to="/signup">
-                  <Button className="bg-blue-600 hover:bg-blue-700 text-white">
-                    Get Started
-                  </Button>
-                </Link>
+                <Button className="bg-orange-600 hover:bg-orange-700 text-white">
+                  Talk to Counselor
+                </Button>
               </>
             )}
           </div>
@@ -152,14 +150,12 @@ const Header = () => {
                   <>
                     <Link to="/login" className="block">
                       <Button variant="outline" className="w-full border-slate-300 text-slate-700">
-                        Sign In
+                        Login
                       </Button>
                     </Link>
-                    <Link to="/signup" className="block">
-                      <Button className="w-full bg-blue-600 hover:bg-blue-700 text-white">
-                        Get Started
-                      </Button>
-                    </Link>
+                    <Button className="w-full bg-orange-600 hover:bg-orange-700 text-white">
+                      Talk to Counselor
+                    </Button>
                   </>
                 )}
               </div>
