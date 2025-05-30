@@ -10,7 +10,7 @@ const Header = () => {
 
   const navItems = [
     { name: 'Home', href: '/' },
-    { name: 'Services', href: '#services' },
+    { name: 'Programs', href: '#services' },
     { name: 'Features', href: '#features' },
     { name: 'About', href: '#about' },
     { name: 'Contact', href: '#contact' },
@@ -22,13 +22,15 @@ const Header = () => {
   }
 
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-sm border-b border-gray-200">
+    <header className="fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-md border-b border-slate-200 shadow-sm">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
           <Link to="/" className="flex items-center space-x-2">
-            <Cloud className="h-8 w-8 text-blue-600" />
-            <span className="text-2xl font-bold text-gray-900">SitCloud</span>
+            <div className="w-8 h-8 bg-blue-600 rounded-lg flex items-center justify-center">
+              <Cloud className="h-5 w-5 text-white" />
+            </div>
+            <span className="text-xl font-bold text-slate-900">SitCloud</span>
           </Link>
 
           {/* Desktop Navigation */}
@@ -37,7 +39,7 @@ const Header = () => {
               <a
                 key={item.name}
                 href={item.href}
-                className="text-gray-700 hover:text-blue-600 transition-colors duration-200 font-medium"
+                className="text-slate-600 hover:text-blue-600 transition-colors duration-200 font-medium"
               >
                 {item.name}
               </a>
@@ -45,9 +47,9 @@ const Header = () => {
           </nav>
 
           {/* CTA Buttons */}
-          <div className="hidden md:flex space-x-4">
+          <div className="hidden md:flex space-x-3">
             <Link to="/login">
-              <Button variant="outline">
+              <Button variant="outline" className="border-slate-300 text-slate-700 hover:bg-slate-50">
                 Sign In
               </Button>
             </Link>
@@ -62,7 +64,7 @@ const Header = () => {
           <div className="md:hidden">
             <button
               onClick={() => setIsMenuOpen(!isMenuOpen)}
-              className="text-gray-700 hover:text-blue-600 focus:outline-none"
+              className="text-slate-700 hover:text-blue-600 focus:outline-none"
             >
               {isMenuOpen ? (
                 <X className="h-6 w-6" />
@@ -75,13 +77,13 @@ const Header = () => {
 
         {/* Mobile Navigation */}
         {isMenuOpen && (
-          <div className="md:hidden py-4 border-t border-gray-200 bg-white">
+          <div className="md:hidden py-4 border-t border-slate-200 bg-white">
             <nav className="flex flex-col space-y-4">
               {navItems.map((item) => (
                 <a
                   key={item.name}
                   href={item.href}
-                  className="text-gray-700 hover:text-blue-600 transition-colors duration-200 font-medium px-4 py-2"
+                  className="text-slate-600 hover:text-blue-600 transition-colors duration-200 font-medium px-4 py-2"
                   onClick={() => setIsMenuOpen(false)}
                 >
                   {item.name}
@@ -89,7 +91,7 @@ const Header = () => {
               ))}
               <div className="px-4 pt-2 space-y-2">
                 <Link to="/login" className="block">
-                  <Button variant="outline" className="w-full">
+                  <Button variant="outline" className="w-full border-slate-300 text-slate-700">
                     Sign In
                   </Button>
                 </Link>
