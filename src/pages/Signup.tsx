@@ -1,12 +1,14 @@
 
 import { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
+import { Checkbox } from '@/components/ui/checkbox';
 import { Cloud, Eye, EyeOff } from 'lucide-react';
 import { useToast } from '@/hooks/use-toast';
+import { apiService } from '@/lib/api';
 
 const Signup = () => {
   const [formData, setFormData] = useState({
@@ -14,16 +16,28 @@ const Signup = () => {
     lastName: '',
     email: '',
     password: '',
-    confirmPassword: ''
+    confirmPassword: '',
+    phone: '',
+    isfromcollege: false,
+    collagename: ''
   });
   const [showPassword, setShowPassword] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
   const { toast } = useToast();
+  const navigate = useNavigate();
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setFormData(prev => ({
       ...prev,
       [e.target.name]: e.target.value
+    }));
+  };
+
+  const handleCollegeChange = (checked: boolean) => {
+    setFormData(prev => ({
+      ...prev,
+      isfromcollege: checked,
+      collagename: checked ? prev.collagename : ''
     }));
   };
 
@@ -42,12 +56,21 @@ const Signup = () => {
     setIsLoading(true);
     
     try {
-      // TODO: Implement Supabase auth signup
-      console.log('Signup attempt:', formData);
-      toast({
-        title: "Account Created Successfully!",
-        description: "Welcome to SitCloud! Please check your email to verify your account.",
-      });
+      const response = await apiService.signup(formData);
+      
+      if (response.status === 200) {
+        toast({
+          title: "Account Created Successfully!",
+          description: response.Message,
+        });
+        navigate('/login');
+      } else {
+        toast({
+          title: "Signup Failed",
+          description: response.Message,
+          variant: "destructive",
+        });
+      }
     } catch (error) {
       toast({
         title: "Signup Failed",
@@ -96,6 +119,7 @@ const Signup = () => {
                 />
               </div>
             </div>
+            
             <div className="space-y-2">
               <Label htmlFor="email">Email</Label>
               <Input
@@ -108,6 +132,19 @@ const Signup = () => {
                 required
               />
             </div>
+            
+            <div className="space-y-2">
+              <Label htmlFor="phone">Phone Number</Label>
+              <Input
+                id="phone"
+                name="phone"
+                placeholder="+91 9876543210"
+                value={formData.phone}
+                onChange={handleInputChange}
+                required
+              />
+            </div>
+            
             <div className="space-y-2">
               <Label htmlFor="password">Password</Label>
               <div className="relative">
@@ -131,6 +168,7 @@ const Signup = () => {
                 </Button>
               </div>
             </div>
+            
             <div className="space-y-2">
               <Label htmlFor="confirmPassword">Confirm Password</Label>
               <Input
@@ -143,6 +181,34 @@ const Signup = () => {
                 required
               />
             </div>
+            
+            <div className="space-y-3">
+              <div className="flex items-center space-x-2">
+                <Checkbox 
+                  id="isfromcollege"
+                  checked={formData.isfromcollege}
+                  onCheckedChange={handleCollegeChange}
+                />
+                <Label htmlFor="isfromcollege" className="text-sm">
+                  I am currently enrolled in a college
+                </Label>
+              </div>
+              
+              {formData.isfromcollege && (
+                <div className="space-y-2">
+                  <Label htmlFor="collagename">College Name</Label>
+                  <Input
+                    id="collagename"
+                    name="collagename"
+                    placeholder="Enter your college name"
+                    value={formData.collagename}
+                    onChange={handleInputChange}
+                    required={formData.isfromcollege}
+                  />
+                </div>
+              )}
+            </div>
+            
             <Button type="submit" className="w-full" disabled={isLoading}>
               {isLoading ? "Creating Account..." : "Create Account"}
             </Button>

@@ -1,17 +1,22 @@
 
 import { useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { Menu, X, Cloud } from 'lucide-react';
+import { Menu, X, Cloud, LogOut } from 'lucide-react';
 import { Button } from '@/components/ui/button';
+import { apiService } from '@/lib/api';
+import { useToast } from '@/hooks/use-toast';
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const location = useLocation();
+  const { toast } = useToast();
+  const isLoggedIn = localStorage.getItem('authToken');
 
   const navItems = [
     { name: 'Home', href: '/' },
-    { name: 'Programs', href: '#services' },
+    { name: 'Courses', href: '/courses' },
     { name: 'Features', href: '#features' },
+    { name: 'Verify Certificate', href: '/verify' },
     { name: 'About', href: '#about' },
     { name: 'Contact', href: '#contact' },
   ];
@@ -20,6 +25,23 @@ const Header = () => {
   if (['/login', '/signup', '/dashboard'].includes(location.pathname)) {
     return null;
   }
+
+  const handleLogout = async () => {
+    try {
+      await apiService.logout();
+      toast({
+        title: "Logged Out",
+        description: "You have been successfully logged out",
+      });
+      window.location.reload();
+    } catch (error) {
+      toast({
+        title: "Logout Error",
+        description: "Failed to logout properly",
+        variant: "destructive",
+      });
+    }
+  };
 
   return (
     <header className="fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-md border-b border-slate-200 shadow-sm">
@@ -36,28 +58,48 @@ const Header = () => {
           {/* Desktop Navigation */}
           <nav className="hidden md:flex items-center space-x-8">
             {navItems.map((item) => (
-              <a
+              <Link
                 key={item.name}
-                href={item.href}
+                to={item.href}
                 className="text-slate-600 hover:text-blue-600 transition-colors duration-200 font-medium"
               >
                 {item.name}
-              </a>
+              </Link>
             ))}
           </nav>
 
           {/* CTA Buttons */}
           <div className="hidden md:flex space-x-3">
-            <Link to="/login">
-              <Button variant="outline" className="border-slate-300 text-slate-700 hover:bg-slate-50">
-                Sign In
-              </Button>
-            </Link>
-            <Link to="/signup">
-              <Button className="bg-blue-600 hover:bg-blue-700 text-white">
-                Get Started
-              </Button>
-            </Link>
+            {isLoggedIn ? (
+              <>
+                <Link to="/dashboard">
+                  <Button variant="outline" className="border-slate-300 text-slate-700 hover:bg-slate-50">
+                    Dashboard
+                  </Button>
+                </Link>
+                <Button 
+                  onClick={handleLogout}
+                  variant="outline" 
+                  className="border-red-300 text-red-700 hover:bg-red-50"
+                >
+                  <LogOut className="h-4 w-4 mr-2" />
+                  Logout
+                </Button>
+              </>
+            ) : (
+              <>
+                <Link to="/login">
+                  <Button variant="outline" className="border-slate-300 text-slate-700 hover:bg-slate-50">
+                    Sign In
+                  </Button>
+                </Link>
+                <Link to="/signup">
+                  <Button className="bg-blue-600 hover:bg-blue-700 text-white">
+                    Get Started
+                  </Button>
+                </Link>
+              </>
+            )}
           </div>
 
           {/* Mobile menu button */}
@@ -80,26 +122,46 @@ const Header = () => {
           <div className="md:hidden py-4 border-t border-slate-200 bg-white">
             <nav className="flex flex-col space-y-4">
               {navItems.map((item) => (
-                <a
+                <Link
                   key={item.name}
-                  href={item.href}
+                  to={item.href}
                   className="text-slate-600 hover:text-blue-600 transition-colors duration-200 font-medium px-4 py-2"
                   onClick={() => setIsMenuOpen(false)}
                 >
                   {item.name}
-                </a>
+                </Link>
               ))}
               <div className="px-4 pt-2 space-y-2">
-                <Link to="/login" className="block">
-                  <Button variant="outline" className="w-full border-slate-300 text-slate-700">
-                    Sign In
-                  </Button>
-                </Link>
-                <Link to="/signup" className="block">
-                  <Button className="w-full bg-blue-600 hover:bg-blue-700 text-white">
-                    Get Started
-                  </Button>
-                </Link>
+                {isLoggedIn ? (
+                  <>
+                    <Link to="/dashboard" className="block">
+                      <Button variant="outline" className="w-full border-slate-300 text-slate-700">
+                        Dashboard
+                      </Button>
+                    </Link>
+                    <Button 
+                      onClick={handleLogout}
+                      variant="outline" 
+                      className="w-full border-red-300 text-red-700"
+                    >
+                      <LogOut className="h-4 w-4 mr-2" />
+                      Logout
+                    </Button>
+                  </>
+                ) : (
+                  <>
+                    <Link to="/login" className="block">
+                      <Button variant="outline" className="w-full border-slate-300 text-slate-700">
+                        Sign In
+                      </Button>
+                    </Link>
+                    <Link to="/signup" className="block">
+                      <Button className="w-full bg-blue-600 hover:bg-blue-700 text-white">
+                        Get Started
+                      </Button>
+                    </Link>
+                  </>
+                )}
               </div>
             </nav>
           </div>
