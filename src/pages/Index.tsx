@@ -16,8 +16,26 @@ const Index = () => {
     "@context": "https://schema.org",
     "@type": "EducationalOrganization",
     "name": "SitCloud Training Institute",
-    "description": "Premier cloud computing training institute offering AWS, Azure, GCP certification courses",
+    "description": "Premier cloud computing training institute offering AWS, Azure, GCP certification courses in Chennai and Bangalore",
     "url": "https://sitcloud.in",
+    "address": [
+      {
+        "@type": "PostalAddress",
+        "streetAddress": "123 Cloud Street, Koramangala",
+        "addressLocality": "Bangalore",
+        "addressRegion": "Karnataka",
+        "postalCode": "560034",
+        "addressCountry": "IN"
+      },
+      {
+        "@type": "PostalAddress",
+        "streetAddress": "456 Tech Avenue, T. Nagar",
+        "addressLocality": "Chennai",
+        "addressRegion": "Tamil Nadu", 
+        "postalCode": "600017",
+        "addressCountry": "IN"
+      }
+    ],
     "sameAs": [
       "https://facebook.com/sitcloud",
       "https://twitter.com/sitcloud",
@@ -27,15 +45,35 @@ const Index = () => {
       "@type": "AggregateRating",
       "ratingValue": "4.9",
       "reviewCount": "2000"
-    }
+    },
+    "offers": [
+      {
+        "@type": "Course",
+        "name": "AWS Certification Bootcamp",
+        "provider": "SitCloud",
+        "courseCode": "AWS-BOOTCAMP"
+      },
+      {
+        "@type": "Course", 
+        "name": "Azure Certification Bootcamp",
+        "provider": "SitCloud",
+        "courseCode": "AZURE-BOOTCAMP"
+      },
+      {
+        "@type": "Course",
+        "name": "GCP Certification Bootcamp", 
+        "provider": "SitCloud",
+        "courseCode": "GCP-BOOTCAMP"
+      }
+    ]
   };
 
   return (
     <div className="min-h-screen">
       <SEOHead
-        title="SitCloud - Premier Cloud Computing Training Institute in Bangalore | AWS, Azure, GCP"
-        description="Master cloud computing with SitCloud's expert-led training programs. Get certified in AWS, Azure, GCP with 100% placement assistance. Join 2000+ successful students."
-        keywords="cloud computing training bangalore, AWS certification, Azure training, GCP certification, DevOps training, cloud architect course"
+        title="SitCloud - Premier Cloud Computing Training Institute in Chennai & Bangalore | AWS, Azure, GCP Certifications"
+        description="Master cloud computing with SitCloud's expert-led certification bootcamps in Chennai and Bangalore. Get certified in AWS, Azure, GCP with 100% placement assistance. Join 2000+ successful students."
+        keywords="cloud computing training chennai bangalore, AWS certification course, Azure training bootcamp, GCP certification program, DevOps training chennai bangalore, cloud architect course india"
         canonical="https://sitcloud.in"
         structuredData={structuredData}
       />
