@@ -7,33 +7,53 @@ const Blog = () => {
   const blogPosts = [
     {
       id: 1,
-      title: "Complete Guide to AWS Cloud Practitioner Certification 2024",
-      excerpt: "Everything you need to know about AWS Cloud Practitioner certification including exam tips, study materials, and career prospects.",
-      author: "Rajesh Kumar",
-      date: "2024-01-15",
-      category: "AWS",
-      readTime: "8 min read",
-      image: "https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=400&h=250&fit=crop"
+      title: "Migrating a Legacy Retail System to AWS – A Real Internship Project",
+      excerpt: "Learn how a team of interns helped migrate a monolithic on-prem retail inventory system to a modern AWS-based microservice architecture.",
+      author: "Sivan Info Tech Team",
+      date: "2025-01-07",
+      category: "Case Study",
+      readTime: "6 min read",
+      image: "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=400&h=250&fit=crop"
     },
     {
       id: 2,
-      title: "Azure vs AWS vs GCP: Which Cloud Platform to Choose in 2024?",
-      excerpt: "A comprehensive comparison of the three major cloud platforms to help you make the right career choice.",
-      author: "Priya Sharma",
-      date: "2024-01-10",
-      category: "Cloud Comparison",
-      readTime: "12 min read",
-      image: "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=400&h=250&fit=crop"
+      title: "How Our Interns Used AWS Lambda to Automate Report Generation",
+      excerpt: "Discover how interns automated a client's weekly sales reports using serverless AWS Lambda, S3, and CloudWatch.",
+      author: "Intern Spotlight Series",
+      date: "2025-01-04",
+      category: "Use Case",
+      readTime: "5 min read",
+      image: "https://images.unsplash.com/photo-1518770660439-4636190af475?w=400&h=250&fit=crop"
     },
     {
       id: 3,
-      title: "Top 10 Cloud Computing Jobs in Bangalore with Salary Ranges",
-      excerpt: "Explore the most in-demand cloud computing roles in Bangalore and their expected salary packages.",
-      author: "Amit Singh",
-      date: "2024-01-05",
-      category: "Career",
-      readTime: "6 min read",
-      image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=250&fit=crop"
+      title: "Real Cloud Cost Optimization for a Healthcare Startup Using Azure Advisor",
+      excerpt: "A breakdown of how our consulting team reduced monthly Azure spend by 35% using right-sizing, reserved instances, and policy enforcement.",
+      author: "Narasimhan Gunasekaran",
+      date: "2025-06-27",
+      category: "FinOps",
+      readTime: "7 min read",
+      image: "https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?w=400&h=250&fit=crop"
+    },
+    {
+      id: 4,
+      title: "Top 5 Questions Our Students Ask About DevOps Careers",
+      excerpt: "Answers to frequently asked questions by bootcamp students on breaking into cloud and DevOps roles.",
+      author: "Simma from Sivan Info Tech LLP",
+      date: "2025-01-05",
+      category: "Career Advice",
+      readTime: "8 min read",
+      image: "https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=400&h=250&fit=crop"
+    },
+    {
+      id: 5,
+      title: "Using AWS IAM Best Practices – Mistakes We See in 90% of Accounts",
+      excerpt: "Learn from real-world cloud audits where teams misconfigured IAM, and how we resolved it through workshops and training.",
+      author: "Sivan Info Tech Security Team",
+      date: "2025-06-29",
+      category: "Cloud Security",
+      readTime: "9 min read",
+      image: "https://images.unsplash.com/photo-1487058792275-0ad4aaf24ca7?w=400&h=250&fit=crop"
     }
   ];
 
@@ -44,10 +64,10 @@ const Blog = () => {
           {/* Section Header */}
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
-              Cloud Computing <span className="text-blue-600">Insights</span>
+              💡 Cloud Insights from <span className="text-blue-600">Real Projects</span>
             </h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Stay updated with the latest trends, tips, and insights in cloud computing
+              Get inspired with practical cloud implementation stories, tips from real-world projects, and expert commentary tailored for aspiring cloud professionals and enterprises.
             </p>
           </div>
 
