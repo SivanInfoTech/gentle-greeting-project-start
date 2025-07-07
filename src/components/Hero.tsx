@@ -18,18 +18,20 @@ const Hero = () => {
             {/* Left Content */}
             <div className="text-white">
               {/* Badge */}
-              <div className="inline-flex items-center px-4 py-2 bg-green-500 text-white rounded-full text-sm font-semibold mb-6 shadow-lg">
+              <div className="inline-flex items-center px-4 py-2 bg-secondary text-white rounded-full text-sm font-semibold mb-6 shadow-lg animate-pulse-glow">
                 <Star className="mr-2 h-4 w-4 fill-current" />
                 #1 Cloud Training Institute in Chennai & Bangalore
               </div>
 
               {/* Main Heading */}
-              <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight">
-                Best Cloud Computing
+              <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight animate-fade-in">
+                <span className="bg-gradient-to-r from-yellow-400 to-orange-500 bg-clip-text text-transparent">
+                  Build Your Cloud Career
+                </span>
                 <br />
-                <span className="text-yellow-400">Certification Bootcamp</span>
+                <span className="text-white">with Real-World Projects</span>
                 <br />
-                <span className="text-2xl md:text-3xl lg:text-4xl text-blue-200">with 100% Placement Support</span>
+                <span className="text-2xl md:text-3xl lg:text-4xl text-blue-200">and Certifications</span>
               </h1>
 
               {/* Subtitle */}
@@ -60,13 +62,17 @@ const Hero = () => {
 
               {/* CTA Buttons */}
               <div className="flex flex-col sm:flex-row gap-4 mb-8">
-                <Button size="lg" className="bg-orange-500 hover:bg-orange-600 text-white px-8 py-4 text-lg font-semibold rounded-lg shadow-xl hover:shadow-2xl transition-all duration-300">
+                <Button size="lg" className="bg-gradient-to-r from-orange-500 to-red-500 hover:from-orange-600 hover:to-red-600 text-white px-8 py-4 text-lg font-semibold rounded-lg shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:scale-105 animate-pulse-glow">
                   <Play className="mr-2 h-5 w-5" />
-                  Get Free Demo
+                  Join Now
                 </Button>
-                <Button size="lg" className="bg-green-600 hover:bg-green-700 text-white px-8 py-4 text-lg font-semibold rounded-lg shadow-xl hover:shadow-2xl transition-all duration-300">
+                <Button size="lg" className="bg-gradient-to-r from-primary to-blue-600 hover:from-blue-600 hover:to-primary text-white px-8 py-4 text-lg font-semibold rounded-lg shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:scale-105">
                   <MessageCircle className="mr-2 h-5 w-5" />
-                  Talk to a Counselor
+                  Start Evaluation
+                </Button>
+                <Button size="lg" className="bg-gradient-to-r from-secondary to-green-600 hover:from-green-600 hover:to-secondary text-white px-8 py-4 text-lg font-semibold rounded-lg shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:scale-105">
+                  <Users className="mr-2 h-5 w-5" />
+                  See Success Stories
                 </Button>
               </div>
 

@@ -52,7 +52,7 @@ const Header = () => {
             <div className="w-8 h-8 bg-blue-600 rounded-lg flex items-center justify-center">
               <Cloud className="h-5 w-5 text-white" />
             </div>
-            <span className="text-xl font-bold text-slate-900">SitCloud</span>
+            <span className="text-xl font-bold text-slate-900">Sivan InfoTech</span>
           </Link>
 
           {/* Desktop Navigation */}

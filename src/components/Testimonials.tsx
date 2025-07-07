@@ -1,135 +1,96 @@
-
-import { Star, Quote, Briefcase, TrendingUp } from 'lucide-react';
+import { useState } from 'react';
 import { Card, CardContent } from '@/components/ui/card';
+import { Button } from '@/components/ui/button';
+import { ChevronLeft, ChevronRight, Star, Quote, Trophy, Users } from 'lucide-react';
 
 const Testimonials = () => {
+  const [currentTestimonial, setCurrentTestimonial] = useState(0);
+
   const testimonials = [
     {
       name: "Priya Sharma",
-      role: "Cloud Engineer at TCS",
-      package: "₹12 LPA",
-      image: "https://images.unsplash.com/photo-1494790108755-2616b612b786?w=150&h=150&fit=crop&crop=face",
-      quote: "SitCloud transformed my career completely! From a non-IT background to landing a ₹12 LPA job at TCS in just 90 days. The hands-on AWS training was incredible!",
-      rating: 5,
-      company: "TCS"
+      role: "Cloud Solutions Architect",
+      company: "Amazon Web Services",
+      image: "https://images.unsplash.com/photo-1494790108755-2616b612b6ae?w=200&h=200&fit=crop&crop=face",
+      testimonial: "Sivan InfoTech transformed my career completely. I went from a non-IT background to landing a role at AWS.",
+      salary: "₹12L"
     },
     {
-      name: "Rahul Kumar",
-      role: "DevOps Engineer at Infosys",
-      package: "₹9.5 LPA",
-      image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=150&h=150&fit=crop&crop=face",
-      quote: "The Azure and GCP training at SitCloud gave me the edge I needed. The mentors are industry experts who genuinely care about your growth.",
-      rating: 5,
-      company: "Infosys"
-    },
-    {
-      name: "Sneha Patel",
-      role: "Cloud Architect at Wipro",
-      package: "₹15 LPA",
-      image: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=150&h=150&fit=crop&crop=face",
-      quote: "The AI specialization program was a game-changer! Now I'm working on cutting-edge ML projects at Wipro. Best investment I ever made!",
-      rating: 5,
-      company: "Wipro"
-    },
-    {
-      name: "Amit Singh",
-      role: "Junior Cloud Engineer at Accenture",
-      package: "₹8 LPA",
-      image: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=150&h=150&fit=crop&crop=face",
-      quote: "From fresher to cloud engineer in 90 days! The placement support was amazing - they prepared me for every interview round.",
-      rating: 5,
-      company: "Accenture"
+      name: "Rajesh Kumar", 
+      role: "DevOps Engineer",
+      company: "Microsoft",
+      image: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=200&h=200&fit=crop&crop=face",
+      testimonial: "The instructors are industry experts who provide practical insights. Highly recommend for cloud computing.",
+      salary: "₹15L"
     }
   ];
 
+  const nextTestimonial = () => {
+    setCurrentTestimonial((prev) => prev === testimonials.length - 1 ? 0 : prev + 1);
+  };
+
+  const prevTestimonial = () => {
+    setCurrentTestimonial((prev) => prev === 0 ? testimonials.length - 1 : prev - 1);
+  };
+
   return (
-    <section className="py-20 bg-gradient-to-br from-purple-50 to-blue-50">
+    <section id="testimonials" className="py-20 bg-gradient-to-br from-blue-50 to-purple-50">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="max-w-7xl mx-auto">
-          {/* Section Header */}
           <div className="text-center mb-16">
-            <div className="inline-flex items-center px-4 py-2 bg-green-100 text-green-800 rounded-full text-sm font-medium mb-4">
-              <Star className="mr-2 h-4 w-4 fill-current" />
-              Success Stories That Inspire
+            <div className="inline-flex items-center px-4 py-2 bg-primary/10 text-primary rounded-full text-sm font-semibold mb-4">
+              <Users className="mr-2 h-4 w-4" />
+              Student Success Stories
             </div>
             <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
-              From Zero to <span className="text-blue-600">Cloud Hero</span>
+              Real Stories, <span className="text-primary">Real Success</span>
             </h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Real stories from our alumni who transformed their careers and landed dream jobs at top companies
-            </p>
           </div>
 
-          {/* Testimonials Grid */}
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
-            {testimonials.map((testimonial, index) => (
-              <Card key={index} className="relative overflow-hidden hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 border-0 shadow-lg bg-white">
-                <CardContent className="p-8">
-                  {/* Quote Icon */}
-                  <Quote className="h-8 w-8 text-blue-200 mb-4" />
+          <div className="relative mb-16">
+            <Card className="max-w-4xl mx-auto shadow-xl">
+              <CardContent className="p-8">
+                <div className="text-center">
+                  <Quote className="h-12 w-12 text-primary mx-auto mb-6" />
+                  <p className="text-lg text-gray-700 mb-6">
+                    "{testimonials[currentTestimonial]?.testimonial}"
+                  </p>
                   
-                  {/* Rating */}
-                  <div className="flex items-center mb-4">
-                    {[...Array(testimonial.rating)].map((_, i) => (
+                  <div className="flex items-center justify-center mb-4">
+                    {[...Array(5)].map((_, i) => (
                       <Star key={i} className="h-5 w-5 text-yellow-400 fill-current" />
                     ))}
                   </div>
 
-                  {/* Quote */}
-                  <p className="text-gray-700 text-lg leading-relaxed mb-6 italic">
-                    "{testimonial.quote}"
-                  </p>
-
-                  {/* Profile */}
-                  <div className="flex items-center">
-                    <img 
-                      src={testimonial.image} 
-                      alt={testimonial.name}
-                      className="w-16 h-16 rounded-full object-cover mr-4 border-4 border-blue-100"
+                  <div className="flex items-center justify-center gap-4">
+                    <img
+                      src={testimonials[currentTestimonial]?.image}
+                      alt={testimonials[currentTestimonial]?.name}
+                      className="w-16 h-16 rounded-full object-cover"
                     />
-                    <div className="flex-1">
-                      <div className="font-semibold text-gray-900 text-lg">{testimonial.name}</div>
-                      <div className="text-blue-600 font-medium">{testimonial.role}</div>
-                      <div className="text-sm text-gray-500">{testimonial.company}</div>
-                    </div>
-                    <div className="text-right">
-                      <div className="bg-green-100 text-green-800 px-3 py-1 rounded-full text-sm font-semibold">
-                        {testimonial.package}
-                      </div>
+                    <div className="text-left">
+                      <h4 className="font-semibold text-gray-900">
+                        {testimonials[currentTestimonial]?.name}
+                      </h4>
+                      <p className="text-gray-600">
+                        {testimonials[currentTestimonial]?.role}
+                      </p>
+                      <p className="text-sm text-primary font-medium">
+                        {testimonials[currentTestimonial]?.company} • {testimonials[currentTestimonial]?.salary}
+                      </p>
                     </div>
                   </div>
-                </CardContent>
-              </Card>
-            ))}
-          </div>
+                </div>
+              </CardContent>
+            </Card>
 
-          {/* Success Metrics */}
-          <div className="bg-gradient-to-r from-blue-600 to-purple-600 rounded-2xl p-8 text-white text-center">
-            <h3 className="text-2xl md:text-3xl font-bold mb-6">
-              Join the Success Revolution! 🎉
-            </h3>
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-              <div className="flex items-center justify-center space-x-3">
-                <Briefcase className="h-8 w-8" />
-                <div>
-                  <div className="text-2xl font-bold">2000+</div>
-                  <div className="text-blue-100">Students Placed</div>
-                </div>
-              </div>
-              <div className="flex items-center justify-center space-x-3">
-                <TrendingUp className="h-8 w-8" />
-                <div>
-                  <div className="text-2xl font-bold">₹8.5L</div>
-                  <div className="text-blue-100">Average Package</div>
-                </div>
-              </div>
-              <div className="flex items-center justify-center space-x-3">
-                <Star className="h-8 w-8 fill-current" />
-                <div>
-                  <div className="text-2xl font-bold">4.9/5</div>
-                  <div className="text-blue-100">Student Rating</div>
-                </div>
-              </div>
+            <div className="flex justify-center gap-4 mt-6">
+              <Button variant="outline" size="icon" onClick={prevTestimonial}>
+                <ChevronLeft className="h-4 w-4" />
+              </Button>
+              <Button variant="outline" size="icon" onClick={nextTestimonial}>
+                <ChevronRight className="h-4 w-4" />
+              </Button>
             </div>
           </div>
         </div>

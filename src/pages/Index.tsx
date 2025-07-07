@@ -1,12 +1,15 @@
 
 import Header from '@/components/Header';
 import Hero from '@/components/Hero';
-import WhySitCloud from '@/components/WhySitCloud';
+import WhySivanInfoTech from '@/components/WhySivanInfoTech';
 import CertificationTracks from '@/components/CertificationTracks';
 import TrainingCenters from '@/components/TrainingCenters';
 import SuccessStories from '@/components/SuccessStories';
 import BatchSchedule from '@/components/BatchSchedule';
 import PlacementPartners from '@/components/PlacementPartners';
+import Gallery from '@/components/Gallery';
+import Evaluation from '@/components/Evaluation';
+import Testimonials from '@/components/Testimonials';
 import Blog from '@/components/Blog';
 import Footer from '@/components/Footer';
 import SEOHead from '@/components/SEOHead';
@@ -16,9 +19,9 @@ const Index = () => {
   const structuredData = {
     "@context": "https://schema.org",
     "@type": "EducationalOrganization",
-    "name": "SitCloud Training Institute",
-    "description": "Premier cloud computing training institute offering AWS, Azure, GCP certification courses in Chennai and Bangalore",
-    "url": "https://sitcloud.in",
+    "name": "Sivan InfoTech LLP",
+    "description": "Premier cloud computing training institute offering AWS, Azure, GCP certification courses and internships in Chennai and Bangalore",
+    "url": "https://sivaninfotech.com",
     "address": [
       {
         "@type": "PostalAddress",
@@ -80,20 +83,23 @@ const Index = () => {
   return (
     <div className="min-h-screen bg-gray-50">
       <SEOHead
-        title="SitCloud - #1 Cloud Computing Training Institute in Chennai & Bangalore | AWS, Azure, GCP Certifications"
-        description="Best Cloud Computing Certification Bootcamp with 100% Placement Support. Master AWS, Azure, GCP with expert training in Chennai and Bangalore. Join 2000+ successful students."
-        keywords="cloud computing training chennai bangalore, AWS certification course, Azure training bootcamp, GCP certification program, DevOps training chennai bangalore, cloud architect course india"
-        canonical="https://sitcloud.in"
+        title="Sivan InfoTech - #1 Cloud Computing Training Institute in Chennai & Bangalore | AWS, Azure, GCP Certifications"
+        description="Build Your Cloud Career with Real-World Projects and Certifications. Master AWS, Azure, GCP with expert training in Chennai and Bangalore. Join thousands of successful interns."
+        keywords="cloud computing training chennai bangalore, AWS certification course, Azure training bootcamp, GCP certification program, DevOps internship, cloud architect course india"
+        canonical="https://sivaninfotech.com"
         structuredData={structuredData}
       />
       <Header />
       <Hero />
-      <WhySitCloud />
+      <WhySivanInfoTech />
       <CertificationTracks />
       <TrainingCenters />
       <SuccessStories />
       <BatchSchedule />
       <PlacementPartners />
+      <Evaluation />
+      <Gallery />
+      <Testimonials />
       <Blog />
       <Footer />
       <FloatingCTA />
