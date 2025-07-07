@@ -2,55 +2,49 @@ import { useState } from 'react';
 import { Card, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { MapPin, Building, Users, Coffee, Laptop, X } from 'lucide-react';
+import bengaluruWorkspace from '@/assets/bengaluru-workspace.jpg';
+import bengaluruBuilding from '@/assets/bengaluru-building.jpg';
+import bengaluruMeetingRooms from '@/assets/bengaluru-meeting-rooms.jpg';
+import bengaluruConference from '@/assets/bengaluru-conference.jpg';
+import bengaluruLounge from '@/assets/bengaluru-lounge.jpg';
 
 const Gallery = () => {
   const [selectedImage, setSelectedImage] = useState<string | null>(null);
 
   const locations = [
     {
-      title: "Chennai Head Office",
-      address: "#8, Ezhil Nagar Main Road, Selaiyur, Chennai, Tamil Nadu – 600073",
-      images: [
-        {
-          url: "https://images.unsplash.com/photo-1497366216548-37526070297c?w=800&h=600&fit=crop",
-          caption: "Main Reception Area",
-          type: "reception"
-        },
-        {
-          url: "https://images.unsplash.com/photo-1542744094-3a31f272c490?w=800&h=600&fit=crop",
-          caption: "Training Classroom",
-          type: "classroom"
-        },
-        {
-          url: "https://images.unsplash.com/photo-1497366811353-6870744d04b2?w=800&h=600&fit=crop",
-          caption: "Student Lab Area",
-          type: "lab"
-        }
-      ]
-    },
-    {
       title: "Bengaluru Branch Office",
       address: "BMTC Complex, Outer Ring Rd, Old Madiwala, Kuvempu Nagar, BTM 2nd Stage, BTM Layout, Bengaluru, Karnataka 560068",
       images: [
         {
-          url: "https://images.unsplash.com/photo-1497366754035-f200968a6e72?w=800&h=600&fit=crop",
-          caption: "Open Office Space",
+          url: bengaluruWorkspace,
+          caption: "Modern Workspace with Colorful Workstations",
           type: "workspace"
         },
         {
-          url: "https://images.unsplash.com/photo-1524758631624-e2822e304c36?w=800&h=600&fit=crop",
-          caption: "Conference Room",
+          url: bengaluruBuilding,
+          caption: "Corporate Building Exterior",
+          type: "building"
+        },
+        {
+          url: bengaluruMeetingRooms,
+          caption: "Meeting Rooms with Red Glass Walls",
           type: "meeting"
         },
         {
-          url: "https://images.unsplash.com/photo-1497366412874-3415097a27e7?w=800&h=600&fit=crop",
-          caption: "Collaborative Learning Space",
-          type: "collaboration"
+          url: bengaluruConference,
+          caption: "Executive Conference Room",
+          type: "conference"
+        },
+        {
+          url: bengaluruLounge,
+          caption: "Student Lounge Area",
+          type: "lounge"
         }
       ]
     },
     {
-      title: "Registered Office",
+      title: "Registered Office (Chennai)",
       address: "9, Sumathi Square & Madan Square, Neelamangalam, Guduvancheri, Chennai, Tamil Nadu 603202",
       images: [
         {
@@ -62,6 +56,11 @@ const Gallery = () => {
           url: "https://images.unsplash.com/photo-1497366216548-37526070297c?w=800&h=600&fit=crop",
           caption: "Executive Office",
           type: "office"
+        },
+        {
+          url: "https://images.unsplash.com/photo-1542744094-3a31f272c490?w=800&h=600&fit=crop",
+          caption: "Training Facility",
+          type: "training"
         }
       ]
     }
