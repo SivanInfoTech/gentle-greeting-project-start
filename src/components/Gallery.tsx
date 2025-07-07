@@ -2,11 +2,6 @@ import { useState } from 'react';
 import { Card, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { MapPin, Building, Users, Coffee, Laptop, X } from 'lucide-react';
-import bengaluruWorkspace from '@/assets/bengaluru-workspace.jpg';
-import bengaluruBuilding from '@/assets/bengaluru-building.jpg';
-import bengaluruMeetingRooms from '@/assets/bengaluru-meeting-rooms.jpg';
-import bengaluruConference from '@/assets/bengaluru-conference.jpg';
-import bengaluruLounge from '@/assets/bengaluru-lounge.jpg';
 
 const Gallery = () => {
   const [selectedImage, setSelectedImage] = useState<string | null>(null);
@@ -17,27 +12,27 @@ const Gallery = () => {
       address: "BMTC Complex, Outer Ring Rd, Old Madiwala, Kuvempu Nagar, BTM 2nd Stage, BTM Layout, Bengaluru, Karnataka 560068",
       images: [
         {
-          url: bengaluruWorkspace,
+          url: "/lovable-uploads/8c10229f-df92-4663-affd-fb5ac9fc2261.png",
           caption: "Modern Workspace with Colorful Workstations",
           type: "workspace"
         },
         {
-          url: bengaluruBuilding,
+          url: "/lovable-uploads/85a18ab5-e051-4863-bd31-1d27be471b49.png",
           caption: "Corporate Building Exterior",
           type: "building"
         },
         {
-          url: bengaluruMeetingRooms,
+          url: "/lovable-uploads/cbe8c4fb-7337-47c0-87ca-8ef86b8b4fcd.png",
           caption: "Meeting Rooms with Red Glass Walls",
           type: "meeting"
         },
         {
-          url: bengaluruConference,
+          url: "/lovable-uploads/eb3fa71f-7f05-4c11-b16c-1355f0db46a5.png",
           caption: "Executive Conference Room",
           type: "conference"
         },
         {
-          url: bengaluruLounge,
+          url: "/lovable-uploads/5aeb5c53-aa36-4228-8fe5-e1f8f39e617d.png",
           caption: "Student Lounge Area",
           type: "lounge"
         }
