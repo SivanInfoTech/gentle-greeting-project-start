@@ -25,26 +25,18 @@ const Index = () => {
     "address": [
       {
         "@type": "PostalAddress",
-        "streetAddress": "456 Tech Avenue, T. Nagar",
+        "streetAddress": "9, Sumathi Square & Madan Square, Neelamangalam, Guduvancheri",
         "addressLocality": "Chennai",
         "addressRegion": "Tamil Nadu", 
-        "postalCode": "600017",
+        "postalCode": "603202",
         "addressCountry": "IN"
       },
       {
         "@type": "PostalAddress",
-        "streetAddress": "123 Cloud Street, Koramangala",
-        "addressLocality": "Bangalore",
+        "streetAddress": "BMTC Complex, Outer Ring Rd, Old Madiwala, Kuvempu Nagar, BTM 2nd Stage, BTM Layout",
+        "addressLocality": "Bengaluru",
         "addressRegion": "Karnataka",
-        "postalCode": "560034",
-        "addressCountry": "IN"
-      },
-      {
-        "@type": "PostalAddress",
-        "streetAddress": "456 Tech Avenue, Rajajinagar",
-        "addressLocality": "Bangalore",
-        "addressRegion": "Karnataka",
-        "postalCode": "560010",
+        "postalCode": "560068",
         "addressCountry": "IN"
       }
     ],

@@ -84,7 +84,7 @@ const Hero = () => {
                 </div>
                 <div className="flex items-center space-x-4">
                   <MapPin className="h-5 w-5 text-yellow-400" />
-                  <span>Chennai: T. Nagar | Bangalore: Rajajinagar & Koramangala</span>
+                  <span>Chennai: Guduvancheri | Bengaluru: BTM Layout</span>
                 </div>
                 <div className="flex items-center space-x-4">
                   <Clock className="h-5 w-5 text-yellow-400" />
