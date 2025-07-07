@@ -6,31 +6,22 @@ import { Button } from '@/components/ui/button';
 const TrainingCenters = () => {
   const centers = [
     {
-      name: "T. Nagar, Chennai",
-      address: "456 Tech Avenue, T. Nagar, Chennai - 600017",
-      phone: "+91 9876543210",
-      specialization: "AWS & Azure Specialization Center",
-      landmarks: ["Near T. Nagar Metro Station", "Opposite Express Avenue Mall", "5 min from Pondy Bazaar"],
-      image: "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=400&h=250&fit=crop",
-      students: "1200+"
-    },
-    {
-      name: "Rajajinagar, Bangalore", 
-      address: "456 Tech Avenue, Rajajinagar, Bangalore - 560010",
-      phone: "+91 9876543211",
+      name: "Bengaluru Branch Office",
+      address: "BMTC Complex, Outer Ring Rd, Old Madiwala, Kuvempu Nagar, BTM 2nd Stage, BTM Layout, Bengaluru, Karnataka 560068",
+      phone: "+91 89255 30011",
       specialization: "Multi-Cloud Training Hub",
-      landmarks: ["Near Rajajinagar Metro", "Close to Orion Mall", "Walking distance from Yeshwantpur"],
+      landmarks: ["Near Old Madiwala", "BTM Layout Area", "Outer Ring Road Access"],
       image: "https://images.unsplash.com/photo-1497366216548-37526070297c?w=400&h=250&fit=crop",
       students: "800+"
     },
     {
-      name: "Koramangala, Bangalore",
-      address: "123 Cloud Street, Koramangala, Bangalore - 560034", 
-      phone: "+91 9876543212",
-      specialization: "GCP & DevOps Excellence Center",
-      landmarks: ["Near Koramangala Metro Station", "Opposite Forum Mall", "5 min from Sony Signal"],
-      image: "https://images.unsplash.com/photo-1524813686514-a57563d77965?w=400&h=250&fit=crop",
-      students: "1500+"
+      name: "Registered Office (Chennai)",
+      address: "9, Sumathi Square & Madan Square, Neelamangalam, Guduvancheri, Chennai, Tamil Nadu 603202",
+      phone: "+91 89255 30011",
+      specialization: "AWS & Azure Specialization Center",
+      landmarks: ["Neelamangalam Area", "Near Guduvancheri", "Chennai Suburban Location"],
+      image: "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=400&h=250&fit=crop",
+      students: "500+"
     }
   ];
 
@@ -53,7 +44,7 @@ const TrainingCenters = () => {
           </div>
 
           {/* Centers Grid */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
             {centers.map((center, index) => (
               <Card key={index} className="overflow-hidden hover:shadow-2xl transition-all duration-300 group border-0 shadow-lg">
                 {/* Center Image */}
