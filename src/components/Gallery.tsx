@@ -7,9 +7,6 @@ import bengaluruBuilding from '@/assets/bengaluru-building.jpg';
 import bengaluruMeetingRooms from '@/assets/bengaluru-meeting-rooms.jpg';
 import bengaluruConference from '@/assets/bengaluru-conference.jpg';
 import bengaluruLounge from '@/assets/bengaluru-lounge.jpg';
-import chennaiEntrance from '@/assets/chennai-entrance.jpg';
-import chennaiOffice from '@/assets/chennai-office.jpg';
-import chennaiWorkspace from '@/assets/chennai-workspace.jpg';
 
 const Gallery = () => {
   const [selectedImage, setSelectedImage] = useState<string | null>(null);
@@ -51,17 +48,17 @@ const Gallery = () => {
       address: "9, Sumathi Square & Madan Square, Neelamangalam, Guduvancheri, Chennai, Tamil Nadu 603202",
       images: [
         {
-          url: chennaiEntrance,
+          url: "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=800&h=600&fit=crop",
           caption: "Office Entrance",
           type: "entrance"
         },
         {
-          url: chennaiOffice,
+          url: "https://images.unsplash.com/photo-1497366216548-37526070297c?w=800&h=600&fit=crop",
           caption: "Executive Office Area",
           type: "office"
         },
         {
-          url: chennaiWorkspace,
+          url: "https://images.unsplash.com/photo-1542744094-3a31f272c490?w=800&h=600&fit=crop",
           caption: "Professional Workspace",
           type: "workspace"
         }
