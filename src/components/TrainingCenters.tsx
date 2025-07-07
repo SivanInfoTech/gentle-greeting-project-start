@@ -2,6 +2,9 @@
 import { MapPin, Phone, Clock, Star, ExternalLink } from 'lucide-react';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
+import chennaiEntrance from '@/assets/chennai-entrance.jpg';
+import chennaiOffice from '@/assets/chennai-office.jpg';
+import chennaiWorkspace from '@/assets/chennai-workspace.jpg';
 
 const TrainingCenters = () => {
   const centers = [
@@ -9,19 +12,17 @@ const TrainingCenters = () => {
       name: "Bengaluru Branch Office",
       address: "BMTC Complex, Outer Ring Rd, Old Madiwala, Kuvempu Nagar, BTM 2nd Stage, BTM Layout, Bengaluru, Karnataka 560068",
       phone: "+91 89255 30011",
-      specialization: "Multi-Cloud Training Hub",
+      specialization: "Cloud Specialization Centre",
       landmarks: ["Near Old Madiwala", "BTM Layout Area", "Outer Ring Road Access"],
-      image: "https://images.unsplash.com/photo-1497366216548-37526070297c?w=400&h=250&fit=crop",
-      students: "800+"
+      image: "https://images.unsplash.com/photo-1497366216548-37526070297c?w=400&h=250&fit=crop"
     },
     {
       name: "Registered Office (Chennai)",
       address: "9, Sumathi Square & Madan Square, Neelamangalam, Guduvancheri, Chennai, Tamil Nadu 603202",
       phone: "+91 89255 30011",
-      specialization: "AWS & Azure Specialization Center",
+      specialization: "Cloud Training HUB",
       landmarks: ["Neelamangalam Area", "Near Guduvancheri", "Chennai Suburban Location"],
-      image: "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=400&h=250&fit=crop",
-      students: "500+"
+      image: chennaiEntrance
     }
   ];
 
@@ -54,9 +55,6 @@ const TrainingCenters = () => {
                     alt={center.name}
                     className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
                   />
-                  <div className="absolute top-4 right-4 bg-blue-600 text-white px-3 py-1 rounded-full text-sm font-semibold">
-                    {center.students} Students
-                  </div>
                 </div>
 
                 <CardHeader className="pb-4">
