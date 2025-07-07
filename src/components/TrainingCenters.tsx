@@ -2,6 +2,7 @@
 import { MapPin, Phone, Clock, Star, ExternalLink } from 'lucide-react';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
+import chennaiEntrance from '@/assets/chennai-entrance.jpg';
 
 const TrainingCenters = () => {
   const centers = [
@@ -19,7 +20,7 @@ const TrainingCenters = () => {
       phone: "+91 89255 30011",
       specialization: "Cloud Training HUB",
       landmarks: ["Neelamangalam Area", "Near Guduvancheri", "Chennai Suburban Location"],
-      image: "https://images.unsplash.com/photo-1497366811353-6870744d04b2?w=400&h=250&fit=crop"
+      image: chennaiEntrance
     }
   ];
 
