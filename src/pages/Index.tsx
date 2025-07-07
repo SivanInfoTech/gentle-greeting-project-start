@@ -3,7 +3,6 @@ import Header from '@/components/Header';
 import Hero from '@/components/Hero';
 import WhySivanInfoTech from '@/components/WhySivanInfoTech';
 import CertificationTracks from '@/components/CertificationTracks';
-import TrainingCenters from '@/components/TrainingCenters';
 import SuccessStories from '@/components/SuccessStories';
 import BatchSchedule from '@/components/BatchSchedule';
 import PlacementPartners from '@/components/PlacementPartners';
@@ -85,7 +84,6 @@ const Index = () => {
       <Hero />
       <WhySivanInfoTech />
       <CertificationTracks />
-      <TrainingCenters />
       
       <BatchSchedule />
       <PlacementPartners />
