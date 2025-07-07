@@ -86,7 +86,7 @@ const Index = () => {
       <WhySivanInfoTech />
       <CertificationTracks />
       <TrainingCenters />
-      <SuccessStories />
+      
       <BatchSchedule />
       <PlacementPartners />
       <Evaluation />
