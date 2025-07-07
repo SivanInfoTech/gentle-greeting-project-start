@@ -7,9 +7,6 @@ import bengaluruBuilding from '@/assets/bengaluru-building.jpg';
 import bengaluruMeetingRooms from '@/assets/bengaluru-meeting-rooms.jpg';
 import bengaluruConference from '@/assets/bengaluru-conference.jpg';
 import bengaluruLounge from '@/assets/bengaluru-lounge.jpg';
-import chennaiEntrance from '@/assets/chennai-entrance.jpg';
-import chennaiOffice from '@/assets/chennai-office.jpg';
-import chennaiWorkspace from '@/assets/chennai-workspace.jpg';
 
 const Gallery = () => {
   const [selectedImage, setSelectedImage] = useState<string | null>(null);
@@ -51,18 +48,18 @@ const Gallery = () => {
       address: "9, Sumathi Square & Madan Square, Neelamangalam, Guduvancheri, Chennai, Tamil Nadu 603202",
       images: [
         {
-          url: chennaiEntrance,
-          caption: "Office Entrance",
+          url: "/lovable-uploads/929c0469-b0e9-4687-bb79-54bdde89bd3d.png",
+          caption: "Office Entrance with SIVAN InfoTech Branding",
           type: "entrance"
         },
         {
-          url: chennaiOffice,
-          caption: "Executive Office Area",
+          url: "/lovable-uploads/d8a0ba94-804b-43b9-8d41-1962ad27ecba.png",
+          caption: "Executive Office with Certifications Display",
           type: "office"
         },
         {
-          url: chennaiWorkspace,
-          caption: "Professional Workspace",
+          url: "/lovable-uploads/0a7abc76-98be-4539-afe0-af53f9ef9f9d.png",
+          caption: "Professional Workspace with SIVAN InfoTech Setup",
           type: "workspace"
         }
       ]
