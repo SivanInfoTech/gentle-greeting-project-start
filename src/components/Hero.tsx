@@ -80,7 +80,7 @@ const Hero = () => {
               <div className="space-y-2 text-blue-100">
                 <div className="flex items-center space-x-4">
                   <Phone className="h-5 w-5 text-yellow-400" />
-                  <span>Call: +91 9876543210</span>
+                  <span>Call: +91 89255 30011</span>
                 </div>
                 <div className="flex items-center space-x-4">
                   <MapPin className="h-5 w-5 text-yellow-400" />

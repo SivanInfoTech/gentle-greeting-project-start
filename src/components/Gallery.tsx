@@ -51,7 +51,7 @@ const Gallery = () => {
     },
     {
       title: "Registered Office",
-      address: "#9, Sumathi Square & Madan Square, Neelamangalam, Tamil Nadu – 603202",
+      address: "9, Sumathi Square & Madan Square, Neelamangalam, Guduvancheri, Chennai, Tamil Nadu 603202",
       images: [
         {
           url: "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=800&h=600&fit=crop",
