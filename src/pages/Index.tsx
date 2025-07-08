@@ -2,6 +2,7 @@
 import Header from '@/components/Header';
 import Hero from '@/components/Hero';
 import WhySivanInfoTech from '@/components/WhySivanInfoTech';
+import CoreFeatures from '@/components/CoreFeatures';
 import CertificationTracks from '@/components/CertificationTracks';
 import SuccessStories from '@/components/SuccessStories';
 import BatchSchedule from '@/components/BatchSchedule';
@@ -83,6 +84,7 @@ const Index = () => {
       <Header />
       <Hero />
       <WhySivanInfoTech />
+      <CoreFeatures />
       <CertificationTracks />
       
       <BatchSchedule />
