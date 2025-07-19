@@ -2,6 +2,7 @@
 import { MessageCircle, Phone, X } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { useState } from 'react';
+import CounselorModal from '@/components/CounselorModal';
 
 const FloatingCTA = () => {
   const [isExpanded, setIsExpanded] = useState(false);
@@ -26,10 +27,12 @@ const FloatingCTA = () => {
                 <MessageCircle className="h-4 w-4 mr-2" />
                 WhatsApp Chat
               </Button>
-              <Button className="w-full bg-blue-600 hover:bg-blue-700 text-white text-sm">
-                <Phone className="h-4 w-4 mr-2" />
-                Call Now
-              </Button>
+              <CounselorModal>
+                <Button className="w-full bg-blue-600 hover:bg-blue-700 text-white text-sm">
+                  <Phone className="h-4 w-4 mr-2" />
+                  Call Now
+                </Button>
+              </CounselorModal>
             </div>
           </div>
         ) : null}
@@ -45,10 +48,12 @@ const FloatingCTA = () => {
       {/* Desktop Floating CTA */}
       <div className="hidden md:block fixed bottom-6 right-6 z-50">
         <div className="bg-gradient-to-r from-orange-600 to-red-600 rounded-full shadow-2xl p-4 hover:scale-105 transition-transform duration-300">
-          <Button className="bg-transparent hover:bg-white/20 text-white border-0 px-6 py-3 text-lg font-semibold">
-            <Phone className="h-5 w-5 mr-2" />
-            Talk to Career Counselor
-          </Button>
+          <CounselorModal>
+            <Button className="bg-transparent hover:bg-white/20 text-white border-0 px-6 py-3 text-lg font-semibold">
+              <Phone className="h-5 w-5 mr-2" />
+              Talk to Career Counselor
+            </Button>
+          </CounselorModal>
         </div>
       </div>
 
@@ -58,9 +63,11 @@ const FloatingCTA = () => {
           <Button className="flex-1 bg-white text-blue-600 hover:bg-gray-100 font-semibold">
             Get Free Demo
           </Button>
-          <Button className="flex-1 bg-orange-500 hover:bg-orange-600 text-white font-semibold">
-            Call Counselor
-          </Button>
+          <CounselorModal>
+            <Button className="flex-1 bg-orange-500 hover:bg-orange-600 text-white font-semibold">
+              Call Counselor
+            </Button>
+          </CounselorModal>
         </div>
       </div>
     </>
