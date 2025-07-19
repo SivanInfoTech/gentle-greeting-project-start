@@ -14,3 +14,12 @@ verify_jwt = true
 
 [functions.contact-inquiry]
 verify_jwt = false
+
+[functions.payment-phonepe]
+verify_jwt = true
+
+[functions.batch-management]
+verify_jwt = false
+
+[functions.notification-service]
+verify_jwt = true
