@@ -25,12 +25,21 @@ const Auth = () => {
 
   const handleSignIn = async (e: React.FormEvent) => {
     e.preventDefault();
+    console.log('Sign in form submitted');
     setIsLoading(true);
     
-    const { error } = await signIn(signInData.email, signInData.password);
-    
-    if (!error) {
-      navigate('/dashboard');
+    try {
+      const { error } = await signIn(signInData.email, signInData.password);
+      console.log('Sign in response:', { error });
+      
+      if (!error) {
+        console.log('Sign in successful, navigating to dashboard');
+        navigate('/dashboard');
+      } else {
+        console.error('Sign in failed:', error);
+      }
+    } catch (err) {
+      console.error('Sign in exception:', err);
     }
     
     setIsLoading(false);
@@ -38,22 +47,34 @@ const Auth = () => {
 
   const handleSignUp = async (e: React.FormEvent) => {
     e.preventDefault();
+    console.log('Sign up form submitted');
     
     if (signUpData.password !== signUpData.confirmPassword) {
+      console.error('Passwords do not match');
+      alert('Passwords do not match');
       return;
     }
 
     setIsLoading(true);
     
-    const { error } = await signUp(
-      signUpData.email, 
-      signUpData.password, 
-      signUpData.name,
-      signUpData.phone
-    );
-    
-    if (!error) {
-      setSignInData({ email: signUpData.email, password: '' });
+    try {
+      const { error } = await signUp(
+        signUpData.email, 
+        signUpData.password, 
+        signUpData.name,
+        signUpData.phone
+      );
+      
+      console.log('Sign up response:', { error });
+      
+      if (!error) {
+        console.log('Sign up successful');
+        setSignInData({ email: signUpData.email, password: '' });
+      } else {
+        console.error('Sign up failed:', error);
+      }
+    } catch (err) {
+      console.error('Sign up exception:', err);
     }
     
     setIsLoading(false);
