@@ -230,6 +230,123 @@ export type Database = {
         }
         Relationships: []
       }
+      enrollments: {
+        Row: {
+          batch_id: string | null
+          completion_date: string | null
+          course_id: string
+          created_at: string
+          enrollment_date: string
+          id: string
+          status: string
+          updated_at: string
+          user_id: string
+        }
+        Insert: {
+          batch_id?: string | null
+          completion_date?: string | null
+          course_id: string
+          created_at?: string
+          enrollment_date?: string
+          id?: string
+          status?: string
+          updated_at?: string
+          user_id: string
+        }
+        Update: {
+          batch_id?: string | null
+          completion_date?: string | null
+          course_id?: string
+          created_at?: string
+          enrollment_date?: string
+          id?: string
+          status?: string
+          updated_at?: string
+          user_id?: string
+        }
+        Relationships: []
+      }
+      notifications: {
+        Row: {
+          created_at: string
+          id: string
+          message: string
+          recipient: string
+          sent_at: string | null
+          status: string
+          subject: string | null
+          template: string | null
+          type: string
+        }
+        Insert: {
+          created_at?: string
+          id?: string
+          message: string
+          recipient: string
+          sent_at?: string | null
+          status?: string
+          subject?: string | null
+          template?: string | null
+          type: string
+        }
+        Update: {
+          created_at?: string
+          id?: string
+          message?: string
+          recipient?: string
+          sent_at?: string | null
+          status?: string
+          subject?: string | null
+          template?: string | null
+          type?: string
+        }
+        Relationships: []
+      }
+      payments: {
+        Row: {
+          amount: number
+          batch_id: string | null
+          course_id: string
+          created_at: string
+          currency: string | null
+          id: string
+          payment_method: string | null
+          payment_response: Json | null
+          status: string
+          transaction_id: string
+          updated_at: string
+          user_id: string
+        }
+        Insert: {
+          amount: number
+          batch_id?: string | null
+          course_id: string
+          created_at?: string
+          currency?: string | null
+          id?: string
+          payment_method?: string | null
+          payment_response?: Json | null
+          status?: string
+          transaction_id: string
+          updated_at?: string
+          user_id: string
+        }
+        Update: {
+          amount?: number
+          batch_id?: string | null
+          course_id?: string
+          created_at?: string
+          currency?: string | null
+          id?: string
+          payment_method?: string | null
+          payment_response?: Json | null
+          status?: string
+          transaction_id?: string
+          updated_at?: string
+          user_id?: string
+        }
+        Relationships: []
+      }
       profiles: {
         Row: {
           created_at: string
