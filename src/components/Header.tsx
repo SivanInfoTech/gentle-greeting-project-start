@@ -1,16 +1,14 @@
 
 import { useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { Menu, X, Cloud, LogOut } from 'lucide-react';
+import { Menu, X, Cloud, LogOut, User } from 'lucide-react';
 import { Button } from '@/components/ui/button';
-import { apiService } from '@/lib/api';
-import { useToast } from '@/hooks/use-toast';
+import { useAuth } from '@/hooks/useAuth';
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const { user, profile, signOut } = useAuth();
   const location = useLocation();
-  const { toast } = useToast();
-  const isLoggedIn = localStorage.getItem('authToken');
 
   const navItems = [
     { name: 'Home', href: '/' },
@@ -22,26 +20,9 @@ const Header = () => {
   ];
 
   // Don't show header on auth pages and dashboard
-  if (['/login', '/signup', '/dashboard'].includes(location.pathname)) {
+  if (['/auth', '/dashboard'].includes(location.pathname)) {
     return null;
   }
-
-  const handleLogout = async () => {
-    try {
-      await apiService.logout();
-      toast({
-        title: "Logged Out",
-        description: "You have been successfully logged out",
-      });
-      window.location.reload();
-    } catch (error) {
-      toast({
-        title: "Logout Error",
-        description: "Failed to logout properly",
-        variant: "destructive",
-      });
-    }
-  };
 
   return (
     <header className="fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-md border-b border-slate-200 shadow-sm">
@@ -71,15 +52,16 @@ const Header = () => {
 
           {/* CTA Buttons */}
           <div className="hidden md:flex space-x-3">
-            {isLoggedIn ? (
+            {user ? (
               <>
                 <Link to="/dashboard">
                   <Button variant="outline" className="border-slate-300 text-slate-700 hover:bg-slate-50">
-                    Dashboard
+                    <User className="h-4 w-4 mr-2" />
+                    {profile?.name || 'Dashboard'}
                   </Button>
                 </Link>
                 <Button 
-                  onClick={handleLogout}
+                  onClick={signOut}
                   variant="outline" 
                   className="border-red-300 text-red-700 hover:bg-red-50"
                 >
@@ -89,7 +71,7 @@ const Header = () => {
               </>
             ) : (
               <>
-                <Link to="/login">
+                <Link to="/auth">
                   <Button variant="outline" className="border-slate-300 text-slate-700 hover:bg-slate-50">
                     Login
                   </Button>
@@ -131,15 +113,16 @@ const Header = () => {
                 </Link>
               ))}
               <div className="px-4 pt-2 space-y-2">
-                {isLoggedIn ? (
+                {user ? (
                   <>
                     <Link to="/dashboard" className="block">
                       <Button variant="outline" className="w-full border-slate-300 text-slate-700">
-                        Dashboard
+                        <User className="h-4 w-4 mr-2" />
+                        {profile?.name || 'Dashboard'}
                       </Button>
                     </Link>
                     <Button 
-                      onClick={handleLogout}
+                      onClick={signOut}
                       variant="outline" 
                       className="w-full border-red-300 text-red-700"
                     >
@@ -149,7 +132,7 @@ const Header = () => {
                   </>
                 ) : (
                   <>
-                    <Link to="/login" className="block">
+                    <Link to="/auth" className="block">
                       <Button variant="outline" className="w-full border-slate-300 text-slate-700">
                         Login
                       </Button>
