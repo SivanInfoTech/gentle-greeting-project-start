@@ -4,12 +4,14 @@ import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 import { Badge } from '@/components/ui/badge';
+import EnrollModal from './EnrollModal';
 
 const CertificationTracks = () => {
   const isLoggedIn = localStorage.getItem('authToken');
 
   const awsTrack = [
     {
+      id: "aws-cloud-practitioner",
       title: "AWS Cloud Practitioner",
       level: "Foundational",
       duration: "4 Weeks",
@@ -18,6 +20,7 @@ const CertificationTracks = () => {
       description: "Perfect entry point to AWS cloud computing"
     },
     {
+      id: "aws-solutions-architect",
       title: "Solutions Architect Associate",
       level: "Associate", 
       duration: "8 Weeks",
@@ -160,9 +163,15 @@ const CertificationTracks = () => {
             </div>
             
             <div className="space-y-2">
-              <Button className={`w-full ${course.popular ? 'bg-orange-600 hover:bg-orange-700' : 'bg-blue-600 hover:bg-blue-700'} text-white font-semibold py-3`}>
-                Enroll Now
-              </Button>
+              <EnrollModal 
+                courseId={course.id} 
+                courseName={course.title} 
+                coursePrice={parseInt(course.price.replace('₹', '').replace(',', ''))}
+              >
+                <Button className={`w-full ${course.popular ? 'bg-orange-600 hover:bg-orange-700' : 'bg-blue-600 hover:bg-blue-700'} text-white font-semibold py-3`}>
+                  Enroll Now
+                </Button>
+              </EnrollModal>
               <Button 
                 variant="outline" 
                 className="w-full text-blue-600 border-blue-600 hover:bg-blue-50"

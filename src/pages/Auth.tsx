@@ -6,7 +6,7 @@ import { Label } from '@/components/ui/label';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 import { Cloud, Eye, EyeOff } from 'lucide-react';
-import { useAuth } from '@/hooks/useAuth';
+import { useBackendAuth } from '@/hooks/useBackendAuth';
 
 const Auth = () => {
   const [showPassword, setShowPassword] = useState(false);
@@ -20,7 +20,7 @@ const Auth = () => {
     confirmPassword: ''
   });
   
-  const { signIn, signUp } = useAuth();
+  const { login, register } = useBackendAuth();
   const navigate = useNavigate();
 
   const handleSignIn = async (e: React.FormEvent) => {
@@ -29,14 +29,14 @@ const Auth = () => {
     setIsLoading(true);
     
     try {
-      const { error } = await signIn(signInData.email, signInData.password);
-      console.log('Sign in response:', { error });
+      const result = await login(signInData.email, signInData.password);
+      console.log('Sign in response:', result);
       
-      if (!error) {
+      if (result.success) {
         console.log('Sign in successful, navigating to dashboard');
         navigate('/dashboard');
       } else {
-        console.error('Sign in failed:', error);
+        console.error('Sign in failed:', result.error);
       }
     } catch (err) {
       console.error('Sign in exception:', err);
@@ -58,20 +58,28 @@ const Auth = () => {
     setIsLoading(true);
     
     try {
-      const { error } = await signUp(
-        signUpData.email, 
-        signUpData.password, 
-        signUpData.name,
-        signUpData.phone
-      );
+      const result = await register({
+        name: signUpData.name,
+        email: signUpData.email,
+        password: signUpData.password,
+        phone: signUpData.phone
+      });
       
-      console.log('Sign up response:', { error });
+      console.log('Sign up response:', result);
       
-      if (!error) {
+      if (result.success) {
         console.log('Sign up successful');
         setSignInData({ email: signUpData.email, password: '' });
+        // Clear signup form
+        setSignUpData({
+          name: '',
+          email: '',
+          phone: '',
+          password: '',
+          confirmPassword: ''
+        });
       } else {
-        console.error('Sign up failed:', error);
+        console.error('Sign up failed:', result.error);
       }
     } catch (err) {
       console.error('Sign up exception:', err);

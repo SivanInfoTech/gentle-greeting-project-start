@@ -3,11 +3,12 @@ import { useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { Menu, X, Cloud, LogOut, User } from 'lucide-react';
 import { Button } from '@/components/ui/button';
-import { useAuth } from '@/hooks/useAuth';
+import { useBackendAuth } from '@/hooks/useBackendAuth';
+import CounselorModal from './CounselorModal';
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const { user, profile, signOut } = useAuth();
+  const { user, logout } = useBackendAuth();
   const location = useLocation();
 
   const navItems = [
@@ -57,11 +58,11 @@ const Header = () => {
                 <Link to="/dashboard">
                   <Button variant="outline" className="border-slate-300 text-slate-700 hover:bg-slate-50">
                     <User className="h-4 w-4 mr-2" />
-                    {profile?.name || 'Dashboard'}
+                    {user?.name || 'Dashboard'}
                   </Button>
                 </Link>
                 <Button 
-                  onClick={signOut}
+                  onClick={logout}
                   variant="outline" 
                   className="border-red-300 text-red-700 hover:bg-red-50"
                 >
@@ -76,9 +77,11 @@ const Header = () => {
                     Login
                   </Button>
                 </Link>
-                <Button className="bg-orange-600 hover:bg-orange-700 text-white">
-                  Talk to Counselor
-                </Button>
+                <CounselorModal>
+                  <Button className="bg-orange-600 hover:bg-orange-700 text-white">
+                    Talk to Counselor
+                  </Button>
+                </CounselorModal>
               </>
             )}
           </div>
@@ -118,11 +121,11 @@ const Header = () => {
                     <Link to="/dashboard" className="block">
                       <Button variant="outline" className="w-full border-slate-300 text-slate-700">
                         <User className="h-4 w-4 mr-2" />
-                        {profile?.name || 'Dashboard'}
+                        {user?.name || 'Dashboard'}
                       </Button>
                     </Link>
                     <Button 
-                      onClick={signOut}
+                      onClick={logout}
                       variant="outline" 
                       className="w-full border-red-300 text-red-700"
                     >
@@ -137,9 +140,11 @@ const Header = () => {
                         Login
                       </Button>
                     </Link>
-                    <Button className="w-full bg-orange-600 hover:bg-orange-700 text-white">
-                      Talk to Counselor
-                    </Button>
+                    <CounselorModal>
+                      <Button className="w-full bg-orange-600 hover:bg-orange-700 text-white">
+                        Talk to Counselor
+                      </Button>
+                    </CounselorModal>
                   </>
                 )}
               </div>

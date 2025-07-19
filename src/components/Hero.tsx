@@ -1,6 +1,8 @@
 
 import { ArrowRight, Play, Star, Users, Award, CheckCircle, Clock, MapPin, Phone, MessageCircle, CloudIcon, Zap } from 'lucide-react';
 import { Button } from '@/components/ui/button';
+import EnrollModal from './EnrollModal';
+import CounselorModal from './CounselorModal';
 
 const Hero = () => {
   return (
@@ -72,14 +74,18 @@ const Hero = () => {
 
               {/* CTA Buttons */}
               <div className="flex flex-col sm:flex-row gap-4 animate-fade-in" style={{animationDelay: '0.6s'}}>
-                <Button size="lg" className="btn-gradient-primary px-8 py-4 text-lg rounded-xl">
-                  <Zap className="mr-2 h-5 w-5" />
-                  Explore Career Tracks
-                </Button>
-                <Button size="lg" variant="outline" className="px-8 py-4 text-lg rounded-xl border-2 border-primary text-primary hover:bg-primary hover:text-white font-semibold transition-all duration-300">
-                  <MessageCircle className="mr-2 h-5 w-5" />
-                  Get Free Career Guidance
-                </Button>
+                <EnrollModal courseName="Cloud Computing Career Track">
+                  <Button size="lg" className="btn-gradient-primary px-8 py-4 text-lg rounded-xl">
+                    <Zap className="mr-2 h-5 w-5" />
+                    Explore Career Tracks
+                  </Button>
+                </EnrollModal>
+                <CounselorModal>
+                  <Button size="lg" variant="outline" className="px-8 py-4 text-lg rounded-xl border-2 border-primary text-primary hover:bg-primary hover:text-white font-semibold transition-all duration-300">
+                    <MessageCircle className="mr-2 h-5 w-5" />
+                    Get Free Career Guidance
+                  </Button>
+                </CounselorModal>
               </div>
 
               {/* Contact Info */}

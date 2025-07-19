@@ -2,10 +2,12 @@
 import { Calendar, Clock, MapPin, Users, Star } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
+import EnrollModal from './EnrollModal';
 
 const BatchSchedule = () => {
   const upcomingBatches = [
     {
+      id: "aws-sa-associate-june",
       course: "AWS Solutions Architect Associate",
       startDate: "June 10, 2025",
       duration: "8 Weeks",
@@ -14,9 +16,11 @@ const BatchSchedule = () => {
       seatsLeft: 5,
       timing: "Weekends 9 AM - 6 PM",
       instructor: "Rajesh Kumar (AWS Certified)",
-      popular: true
+      popular: true,
+      price: 45000
     },
     {
+      id: "azure-fundamentals-june",
       course: "Azure Fundamentals (AZ-900)",
       startDate: "June 12, 2025", 
       duration: "3 Weeks",
@@ -24,9 +28,11 @@ const BatchSchedule = () => {
       mode: "Offline",
       seatsLeft: 7,
       timing: "Weekdays 7 PM - 9 PM",
-      instructor: "Priya Sharma (Azure Expert)"
+      instructor: "Priya Sharma (Azure Expert)",
+      price: 20000
     },
     {
+      id: "gcp-architect-june",
       course: "GCP Professional Cloud Architect",
       startDate: "June 15, 2025",
       duration: "10 Weeks", 
@@ -34,9 +40,11 @@ const BatchSchedule = () => {
       mode: "Online",
       seatsLeft: 3,
       timing: "Weekends 10 AM - 5 PM",
-      instructor: "Arjun Nair (GCP Certified)"
+      instructor: "Arjun Nair (GCP Certified)",
+      price: 55000
     },
     {
+      id: "aws-developer-june",
       course: "AWS Developer Associate",
       startDate: "June 18, 2025",
       duration: "8 Weeks",
@@ -44,9 +52,11 @@ const BatchSchedule = () => {
       mode: "Offline",
       seatsLeft: 8,
       timing: "Weekdays 6 PM - 8 PM",
-      instructor: "Kavya Reddy (DevOps Expert)"
+      instructor: "Kavya Reddy (DevOps Expert)",
+      price: 42000
     },
     {
+      id: "azure-admin-june",
       course: "Azure Administrator (AZ-104)",
       startDate: "June 20, 2025",
       duration: "8 Weeks",
@@ -55,9 +65,11 @@ const BatchSchedule = () => {
       seatsLeft: 4,
       timing: "Weekends 9 AM - 6 PM",
       instructor: "Amit Singh (Azure Specialist)",
-      popular: true
+      popular: true,
+      price: 40000
     },
     {
+      id: "devops-bootcamp-june",
       course: "Multi-Cloud DevOps Bootcamp",
       startDate: "June 25, 2025",
       duration: "12 Weeks",
@@ -65,7 +77,8 @@ const BatchSchedule = () => {
       mode: "Online",
       seatsLeft: 6,
       timing: "Weekdays 7 PM - 10 PM",
-      instructor: "Sneha Patel (DevOps Architect)"
+      instructor: "Sneha Patel (DevOps Architect)",
+      price: 65000
     }
   ];
 
@@ -141,15 +154,21 @@ const BatchSchedule = () => {
                   </div>
 
                   {/* CTA Button */}
-                  <Button 
-                    className={`w-full ${
-                      batch.popular 
-                        ? 'bg-orange-600 hover:bg-orange-700' 
-                        : 'bg-blue-600 hover:bg-blue-700'
-                    } text-white py-3 font-semibold`}
+                  <EnrollModal 
+                    courseId={batch.id} 
+                    courseName={batch.course} 
+                    coursePrice={batch.price}
                   >
-                    {batch.seatsLeft <= 3 ? 'Hurry! Enroll Now' : 'Enroll Now'}
-                  </Button>
+                    <Button 
+                      className={`w-full ${
+                        batch.popular 
+                          ? 'bg-orange-600 hover:bg-orange-700' 
+                          : 'bg-blue-600 hover:bg-blue-700'
+                      } text-white py-3 font-semibold`}
+                    >
+                      {batch.seatsLeft <= 3 ? 'Hurry! Enroll Now' : 'Enroll Now'}
+                    </Button>
+                  </EnrollModal>
                 </div>
               </div>
             ))}
