@@ -1,9 +1,7 @@
 // Backend API integration for existing Flask backend
 // Based on the existing Flask app.py structure
 
-const API_BASE_URL = process.env.NODE_ENV === 'production' 
-  ? 'https://sitcloud.in/api' 
-  : 'http://localhost:5000/api';
+const API_BASE_URL = 'https://sitcloud.in/api';
 
 interface ApiResponse<T = any> {
   success: boolean;
