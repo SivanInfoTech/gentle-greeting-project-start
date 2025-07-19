@@ -3,8 +3,9 @@ import Header from '@/components/Header';
 import Hero from '@/components/Hero';
 import WhySivanInfoTech from '@/components/WhySivanInfoTech';
 import CoreFeatures from '@/components/CoreFeatures';
-import CertificationTracks from '@/components/CertificationTracks';
-import SuccessStories from '@/components/SuccessStories';
+import HowItWorks from '@/components/HowItWorks';
+import CourseTracksNew from '@/components/CourseTracksNew';
+import SuccessStoriesNew from '@/components/SuccessStoriesNew';
 import BatchSchedule from '@/components/BatchSchedule';
 import PlacementPartners from '@/components/PlacementPartners';
 import Gallery from '@/components/Gallery';
@@ -73,7 +74,7 @@ const Index = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gray-50">
+    <div className="min-h-screen bg-white">
       <SEOHead
         title="Sivan InfoTech - #1 Cloud Computing Training Institute in Chennai & Bangalore | AWS, Azure, GCP Certifications"
         description="Build Your Cloud Career with Real-World Projects and Certifications. Master AWS, Azure, GCP with expert training in Chennai and Bangalore. Join thousands of successful interns."
@@ -85,8 +86,9 @@ const Index = () => {
       <Hero />
       <WhySivanInfoTech />
       <CoreFeatures />
-      <CertificationTracks />
-      
+      <HowItWorks />
+      <CourseTracksNew />
+      <SuccessStoriesNew />
       <BatchSchedule />
       <PlacementPartners />
       <Evaluation />

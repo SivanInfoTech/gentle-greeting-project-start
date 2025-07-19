@@ -18,6 +18,10 @@ export default {
 			}
 		},
 		extend: {
+			fontFamily: {
+				inter: ['Inter', 'sans-serif'],
+				poppins: ['Poppins', 'sans-serif'],
+			},
 			colors: {
 				border: 'hsl(var(--border))',
 				input: 'hsl(var(--input))',
@@ -61,7 +65,12 @@ export default {
 					'accent-foreground': 'hsl(var(--sidebar-accent-foreground))',
 					border: 'hsl(var(--sidebar-border))',
 					ring: 'hsl(var(--sidebar-ring))'
-				}
+				},
+				// Cloud Platform Colors
+				'aws-orange': 'hsl(var(--aws-orange))',
+				'azure-blue': 'hsl(var(--azure-blue))',
+				'gcp-yellow': 'hsl(var(--gcp-yellow))',
+				'gcp-red': 'hsl(var(--gcp-red))',
 			},
 			borderRadius: {
 				lg: 'var(--radius)',
