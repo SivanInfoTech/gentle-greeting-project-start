@@ -85,6 +85,8 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
   }, []);
 
   const signUp = async (email: string, password: string, name: string, phone?: string) => {
+    console.log('Attempting signup with:', { email, name, phone });
+    
     const { error } = await supabase.auth.signUp({
       email,
       password,
@@ -97,7 +99,10 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
       }
     });
 
+    console.log('Signup result:', { error });
+
     if (error) {
+      console.error('Signup error:', error);
       toast({
         title: "Sign Up Failed",
         description: error.message,
@@ -114,12 +119,17 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
   };
 
   const signIn = async (email: string, password: string) => {
+    console.log('Attempting signin with:', { email });
+    
     const { error } = await supabase.auth.signInWithPassword({
       email,
       password
     });
 
+    console.log('Signin result:', { error });
+
     if (error) {
+      console.error('Signin error:', error);
       toast({
         title: "Sign In Failed",
         description: error.message,
