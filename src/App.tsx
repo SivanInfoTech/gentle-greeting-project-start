@@ -11,6 +11,8 @@ import Dashboard from "./pages/Dashboard";
 import Courses from "./pages/Courses";
 import Verify from "./pages/Verify";
 import PaymentStatus from "./pages/PaymentStatus";
+import WhyUs from "./pages/WhyUs";
+import Contact from "./pages/Contact";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -27,6 +29,8 @@ const App = () => (
             <Route path="/auth" element={<Auth />} />
             <Route path="/dashboard" element={<Dashboard />} />
             <Route path="/courses" element={<Courses />} />
+            <Route path="/why-us" element={<WhyUs />} />
+            <Route path="/contact" element={<Contact />} />
             <Route path="/verify" element={<Verify />} />
             <Route path="/paymentstatus/:transactionId" element={<PaymentStatus />} />
             {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
